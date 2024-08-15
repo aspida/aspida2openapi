@@ -1,6 +1,4 @@
 /* eslint-disable */
-import type { ReadStream } from 'fs'
-
 export type PaymentParams = {
   /** 事業所ID */
   company_id: number;
@@ -578,7 +576,7 @@ export type ReceiptCreateParams = {
   /** 取引日 (yyyy-mm-dd) */
   issue_date?: string | undefined;
   /** 証憑ファイル */
-  receipt: (File | ReadStream);
+  receipt: File;
 }
 
 export type ReceiptUpdateParams = {

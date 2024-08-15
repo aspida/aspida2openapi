@@ -1,6 +1,5 @@
 /* eslint-disable */
 import type { DefineMethods } from 'aspida';
-import type { ReadStream } from 'fs';
 
 export type Methods = DefineMethods<{
   post: {
@@ -15,7 +14,7 @@ export type Methods = DefineMethods<{
 
     reqBody: {
       /** Image to upload. */
-      file: (File | ReadStream);
+      file: File;
       rightholder?: string | undefined;
       statusCopyright?: 'unknown' | 'cc' | 'licensed' | 'sublicensed' | undefined;
     };

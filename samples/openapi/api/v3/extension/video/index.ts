@@ -1,6 +1,5 @@
 /* eslint-disable */
 import type { DefineMethods } from 'aspida';
-import type { ReadStream } from 'fs';
 import type * as Types from '../../../../@types';
 
 export type Methods = DefineMethods<{
@@ -19,7 +18,7 @@ export type Methods = DefineMethods<{
 
     reqBody: {
       /** video to upload. */
-      file: (File | ReadStream);
+      file: File;
     };
   };
 }>;

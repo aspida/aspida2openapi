@@ -1,6 +1,5 @@
 /* eslint-disable */
 import type { DefineMethods } from 'aspida';
-import type { ReadStream } from 'fs';
 
 export type Methods = DefineMethods<{
   post: {
@@ -9,6 +8,6 @@ export type Methods = DefineMethods<{
     } | undefined;
 
     status: 204;
-    reqBody: (File | ReadStream);
+    reqBody: File;
   };
 }>;

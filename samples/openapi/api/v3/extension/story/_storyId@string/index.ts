@@ -1,6 +1,5 @@
 /* eslint-disable */
 import type { DefineMethods } from 'aspida';
-import type { ReadStream } from 'fs';
 import type * as Types from '../../../../../@types';
 
 export type Methods = DefineMethods<{
@@ -31,9 +30,9 @@ export type Methods = DefineMethods<{
       quoteSource?: string | undefined;
       quotePersonHandle?: string | undefined;
       videoId?: number | undefined;
-      video?: (File | ReadStream) | undefined;
+      video?: File | undefined;
       audioId?: number | undefined;
-      audio?: (File | ReadStream) | undefined;
+      audio?: File | undefined;
       text?: string | undefined;
       headline?: string | undefined;
       quoteCreated?: string | undefined;

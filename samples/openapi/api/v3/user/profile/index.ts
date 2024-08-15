@@ -1,6 +1,5 @@
 /* eslint-disable */
 import type { DefineMethods } from 'aspida';
-import type { ReadStream } from 'fs';
 import type * as Types from '../../../../@types';
 
 export type Methods = DefineMethods<{
@@ -13,7 +12,7 @@ export type Methods = DefineMethods<{
       screenName?: string | undefined;
       url?: string | undefined;
       /** Profile picture to upload. */
-      image?: (File | ReadStream) | undefined;
+      image?: File | undefined;
       imageId?: string | undefined;
     };
   };
