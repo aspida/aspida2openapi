@@ -34,8 +34,8 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
 
     const compilerOptions: TJS.CompilerOptions = {
       strictNullChecks: true,
-      rootDir: config.input,
-      baseUrl: config.input,
+      rootDir: process.cwd(),
+      baseUrl: process.cwd(),
       // @ts-expect-error dont match ScriptTarget
       target: 'ES2022',
     };

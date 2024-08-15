@@ -23,5 +23,11 @@ export const run = (args: string[]) => {
 
   const config = configs[0];
 
-  build(config);
+  build({
+    ...config,
+    openapi: {
+      ...config.openapi,
+      outputFile: argv.output ?? config.openapi?.outputFile,
+    },
+  });
 };
