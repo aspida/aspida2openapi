@@ -1,7 +1,7 @@
 import type { AspidaMethodParams } from 'aspida';
 import type { DirentTree } from 'aspida/dist/cjs/getDirentTree';
 import { getDirentTree } from 'aspida/dist/cjs/getDirentTree';
-import { unlinkSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import type { OpenAPIV3_1 } from 'openapi-types';
 import { join } from 'path';
 import * as TJS from 'typescript-json-schema';
@@ -42,6 +42,10 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
 
     const program = TJS.getProgramFromFiles([typeFilePath], compilerOptions);
     const schema = TJS.generateSchema(program, 'AllMethods', { required: true });
+    const existingDoc: OpenAPIV3_1.Document | undefined = existsSync(config.output)
+      ? JSON.parse(readFileSync(config.output, 'utf8'))
+      : undefined;
+
     const doc: OpenAPIV3_1.Document = {
       openapi: '3.1.0',
       info: {
@@ -49,6 +53,7 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
         version: 'v0.0',
       },
       servers: config.baseURL ? [{ url: config.baseURL }] : undefined,
+      ...existingDoc,
       paths: {},
       components: { schemas: schema?.definitions as any },
     };
