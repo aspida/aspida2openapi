@@ -25,6 +25,24 @@
 
 ## Getting Started
 
+```sh
+$ npx aspida2openapi
+```
+
+## Cli options
+
+### `-o`, `--output`
+
+can change openapi file name
+
+### `-c`, `--config`
+
+path to an aspida config file
+
+### `--version`
+
+display version
+
 ## License
 
 aspida2openapi is licensed under a [MIT License](https://github.com/aspida/aspida2openapi/blob/main/LICENSE).

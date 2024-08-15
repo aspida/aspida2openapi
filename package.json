@@ -27,8 +27,7 @@
   "keywords": [
     "typescript",
     "aspida",
-    "openapi",
-    "swagger"
+    "openapi"
   ],
   "dependencies": {
     "aspida": "^1.14.0",
