@@ -1,0 +1,45 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aspida to OpenAPI",
+    "version": "v0.0"
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "samples/allOf-required/path": {
+      "get": {
+        "tags": [
+          "path"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "取得成功",
+                  "type": "object",
+                  "properties": {
+                    "req_property": {
+                      "description": "required property in response",
+                      "type": "string"
+                    },
+                    "unreq_property": {
+                      "description": "unrequired property in response",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

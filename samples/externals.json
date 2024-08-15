@@ -1,0 +1,1002 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aspida to OpenAPI",
+    "version": "v0.0"
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "samples/externals/users/{user_id}/orders/{order_id}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ok",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/orders": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "The user identifier (e.g. phone number) to filter the results",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ok",
+                  "type": "array",
+                  "items": {
+                    "description": "Information related to an order",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "Unique id of the order",
+                        "type": "string"
+                      },
+                      "offer_id": {
+                        "description": "Id of the purchased offer",
+                        "type": "string"
+                      },
+                      "product_id": {
+                        "description": "Id of the subscribed product this order relates to",
+                        "type": "string"
+                      },
+                      "identifier": {
+                        "description": "user identifer (e.g. phone number) associated to the order",
+                        "type": "string"
+                      },
+                      "creation_date": {
+                        "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "type of the order",
+                        "enum": [
+                          "purchase",
+                          "unsubscription",
+                          "update"
+                        ],
+                        "type": "string"
+                      },
+                      "status": {
+                        "$ref": "#/components/schemas/OrderStatus"
+                      },
+                      "error": {
+                        "description": "Information related to an error when trying to purchase an offer",
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "description": "Error code produces when trying to purchase an offer",
+                            "type": "string"
+                          },
+                          "description": {
+                            "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "description"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "creation_date",
+                      "id",
+                      "status",
+                      "type"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/orders/purchase/invoice": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a purchase order",
+                "type": "object",
+                "properties": {
+                  "offer_id": {
+                    "description": "Id of the offer related to the new order",
+                    "type": "string"
+                  },
+                  "identifier": {
+                    "description": "user identifer (e.g. phone number) associated to the order",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "offer_id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/orders/purchase/wallet": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a purchase order",
+                "type": "object",
+                "properties": {
+                  "offer_id": {
+                    "description": "Id of the offer related to the new order",
+                    "type": "string"
+                  },
+                  "identifier": {
+                    "description": "user identifer (e.g. phone number) associated to the order",
+                    "type": "string"
+                  },
+                  "wallet_type": {
+                    "$ref": "#/components/schemas/WalletType"
+                  }
+                },
+                "required": [
+                  "offer_id",
+                  "wallet_type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/orders/unsubscribe": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a purchase order",
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "description": "Id of the product to be unsubscribed",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "product_id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/orders/update/renew": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a update order",
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "description": "Id of the product to be updated",
+                    "type": "string"
+                  },
+                  "renew": {
+                    "description": "True to indicate that product renovation config should be activated, false to do the opposite",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "product_id",
+                  "renew"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "phone_number",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ok",
+                  "type": "array",
+                  "items": {
+                    "description": "Information related to an order",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "Unique id of the order",
+                        "type": "string"
+                      },
+                      "offer_id": {
+                        "description": "Id of the purchased offer",
+                        "type": "string"
+                      },
+                      "product_id": {
+                        "description": "Id of the subscribed product this order relates to",
+                        "type": "string"
+                      },
+                      "identifier": {
+                        "description": "user identifer (e.g. phone number) associated to the order",
+                        "type": "string"
+                      },
+                      "creation_date": {
+                        "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "type of the order",
+                        "enum": [
+                          "purchase",
+                          "unsubscription",
+                          "update"
+                        ],
+                        "type": "string"
+                      },
+                      "status": {
+                        "$ref": "#/components/schemas/OrderStatus"
+                      },
+                      "error": {
+                        "description": "Information related to an error when trying to purchase an offer",
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "description": "Error code produces when trying to purchase an offer",
+                            "type": "string"
+                          },
+                          "description": {
+                            "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "description"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "creation_date",
+                      "id",
+                      "status",
+                      "type"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/invoice": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "phone_number",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a purchase order",
+                "type": "object",
+                "properties": {
+                  "offer_id": {
+                    "description": "Id of the offer related to the new order",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "offer_id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/wallet": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "phone_number",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Body to create a purchase order",
+                "type": "object",
+                "properties": {
+                  "offer_id": {
+                    "description": "Id of the offer related to the new order",
+                    "type": "string"
+                  },
+                  "wallet_type": {
+                    "$ref": "#/components/schemas/WalletType"
+                  }
+                },
+                "required": [
+                  "offer_id",
+                  "wallet_type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Created",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique id of the order",
+                      "type": "string"
+                    },
+                    "offer_id": {
+                      "description": "Id of the purchased offer",
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "description": "Id of the subscribed product this order relates to",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "user identifer (e.g. phone number) associated to the order",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "description": "Time when the order was created, in ISO-8601 extended local date format. Time-offset from UTC may be used to match local OB time.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "type of the order",
+                      "enum": [
+                        "purchase",
+                        "unsubscription",
+                        "update"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/OrderStatus"
+                    },
+                    "error": {
+                      "description": "Information related to an error when trying to purchase an offer",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "description": "Error code produces when trying to purchase an offer",
+                          "type": "string"
+                        },
+                        "description": {
+                          "description": "Message information related to the error when trying to purchase an offer. User Friendly field.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "creation_date",
+                    "id",
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OrderStatus": {
+        "enum": [
+          "confirmed",
+          "pending",
+          "rejected"
+        ],
+        "type": "string"
+      },
+      "WalletType": {
+        "description": "type of the wallet",
+        "enum": [
+          "additional_services",
+          "communications",
+          "general"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}

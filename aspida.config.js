@@ -1,0 +1,15 @@
+module.exports = [
+  { input: 'samples/swagger' },
+  { input: 'samples/simple', openapi: { outputFile: 'samples/simple-openapi.json' } },
+  { input: 'samples/strapi' },
+  { input: 'samples/freee' },
+  { input: 'samples/openapi' },
+  { input: 'samples/externals' },
+  { input: 'samples/nullable-object' },
+  { input: 'samples/array-one-of' },
+  { input: 'samples/request-bodies' },
+  { input: 'samples/responses' },
+  { input: 'samples/path' },
+  { input: 'samples/headers' },
+  { input: 'samples/allOf-required' },
+];

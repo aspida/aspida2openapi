@@ -1,0 +1,6258 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aspida to OpenAPI",
+    "version": "v0.0"
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "samples/openapi/api/stream/v1/stories/{storyId}": {
+      "get": {
+        "tags": [
+          "api",
+          "stream",
+          "v1",
+          "stories"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "type": {
+                            "$ref": "#/components/schemas/CardEnumModel"
+                          },
+                          "createdByLabel": {
+                            "type": "string"
+                          },
+                          "created": {
+                            "type": "string"
+                          },
+                          "postedTime": {
+                            "type": "string"
+                          },
+                          "updated": {
+                            "type": "string"
+                          },
+                          "published": {
+                            "type": "boolean"
+                          },
+                          "position": {
+                            "type": "number"
+                          },
+                          "headline": {
+                            "type": "string"
+                          },
+                          "quotePerson": {
+                            "type": "string"
+                          },
+                          "quotePersonHandle": {
+                            "type": "string"
+                          },
+                          "quote": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "sourceName": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "abstract": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "statusCopyright": {
+                                "type": "number"
+                              },
+                              "rightholder": {
+                                "type": "string"
+                              },
+                              "thumb": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "enum": [
+                                  "error",
+                                  "ok",
+                                  "processing"
+                                ],
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "rightholder",
+                              "status",
+                              "statusCopyright",
+                              "thumb"
+                            ]
+                          },
+                          "audio": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "thumb": {
+                                "type": "string"
+                              },
+                              "originalThumb": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "duration": {
+                                "type": "number"
+                              },
+                              "width": {
+                                "type": "number"
+                              },
+                              "height": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "status",
+                              "thumb"
+                            ]
+                          },
+                          "styles": {
+                            "type": "object",
+                            "properties": {
+                              "showAuthor": {
+                                "type": "boolean"
+                              },
+                              "teaserStyle": {
+                                "description": "Alternative UI Templates for article cards",
+                                "enum": [
+                                  "big_without_text",
+                                  "small_with_text",
+                                  "small_without_text",
+                                  "standard"
+                                ],
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "author": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "enum": [
+                                  "api",
+                                  "curate-backend"
+                                ],
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "image": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "statusCopyright": {
+                                    "type": "number"
+                                  },
+                                  "rightholder": {
+                                    "type": "string"
+                                  },
+                                  "thumb": {
+                                    "type": "string"
+                                  },
+                                  "status": {
+                                    "enum": [
+                                      "error",
+                                      "ok",
+                                      "processing"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "rightholder",
+                                  "status",
+                                  "statusCopyright",
+                                  "thumb"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "type"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "created",
+                          "id",
+                          "postedTime",
+                          "published",
+                          "type",
+                          "updated"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "data"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/stream/v1/stories": {
+      "get": {
+        "tags": [
+          "api",
+          "stream",
+          "v1",
+          "stories"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelMixV3",
+                  "description": "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/me": {
+      "get": {
+        "tags": [
+          "api",
+          "v1",
+          "me"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "number"
+                    },
+                    "screenName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "isStaff": {
+                      "type": "boolean"
+                    },
+                    "channelName": {
+                      "type": "string"
+                    },
+                    "channelId": {
+                      "type": "number"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "email",
+                    "isStaff",
+                    "screenName",
+                    "userId"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/mixes/{id}": {
+      "put": {
+        "tags": [
+          "api",
+          "v1",
+          "mixes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/mixes/{mixId}/cards": {
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "mixes"
+        ],
+        "parameters": [
+          {
+            "name": "mixId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/CardEnumModel"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "type": "string"
+                  },
+                  "sourceName": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "quotePerson": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "quotePersonImageId": {
+                    "type": "string"
+                  },
+                  "quotePersonImage": {
+                    "type": "string"
+                  },
+                  "quoteSource": {
+                    "type": "string"
+                  },
+                  "quotePersonHandle": {
+                    "type": "string"
+                  },
+                  "videoId": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "quoteCreated": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/mixes/{mixId}/url": {
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "mixes"
+        ],
+        "parameters": [
+          {
+            "name": "mixId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "enableImage": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/mixes": {
+      "get": {
+        "tags": [
+          "api",
+          "v1",
+          "mixes"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "title": {
+                        "type": "number"
+                      },
+                      "createdByCurrentClientAPI": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "createdByCurrentClientAPI",
+                      "id",
+                      "title"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "mixes"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/parse/image": {
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "parse",
+          "image"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Image to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "rightholder": {
+                    "type": "string"
+                  },
+                  "statusCopyright": {
+                    "enum": [
+                      "cc",
+                      "licensed",
+                      "sublicensed",
+                      "unknown"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "imageId": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "imageId"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/parse": {
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "parse"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "quotePerson": {
+                          "type": "string"
+                        },
+                        "quotePersonHandle": {
+                          "type": "string"
+                        },
+                        "quote": {
+                          "type": "string"
+                        },
+                        "quoteSource": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "quotePersonImage": {
+                          "type": "string"
+                        },
+                        "quoteCreated": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "abstract": {
+                          "type": "string"
+                        },
+                        "sourceName": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v1/token": {
+      "post": {
+        "tags": [
+          "api",
+          "v1",
+          "token"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "organisationSubdomain": {
+                    "type": "string"
+                  },
+                  "channelSubdomain": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "channelSubdomain",
+                  "organisationSubdomain",
+                  "userId"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "token"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/2fa": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "2fa"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "dataUrl": {
+                      "type": "string"
+                    },
+                    "otpURL": {
+                      "type": "string"
+                    },
+                    "secret": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/{itemId}": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "formattedText": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/news-feed": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "date string or number of milliseconds",
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "reverse",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "type": {
+                                "$ref": "#/components/schemas/CardEnumModel"
+                              },
+                              "createdByLabel": {
+                                "type": "string"
+                              },
+                              "created": {
+                                "type": "string"
+                              },
+                              "postedTime": {
+                                "type": "string"
+                              },
+                              "updated": {
+                                "type": "string"
+                              },
+                              "published": {
+                                "type": "boolean"
+                              },
+                              "position": {
+                                "type": "number"
+                              },
+                              "headline": {
+                                "type": "string"
+                              },
+                              "quotePerson": {
+                                "type": "string"
+                              },
+                              "quotePersonHandle": {
+                                "type": "string"
+                              },
+                              "quote": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "sourceName": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "abstract": {
+                                "type": "string"
+                              },
+                              "image": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "statusCopyright": {
+                                    "type": "number"
+                                  },
+                                  "rightholder": {
+                                    "type": "string"
+                                  },
+                                  "thumb": {
+                                    "type": "string"
+                                  },
+                                  "status": {
+                                    "enum": [
+                                      "error",
+                                      "ok",
+                                      "processing"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "rightholder",
+                                  "status",
+                                  "statusCopyright",
+                                  "thumb"
+                                ]
+                              },
+                              "audio": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "thumb": {
+                                    "type": "string"
+                                  },
+                                  "originalThumb": {
+                                    "type": "string"
+                                  },
+                                  "status": {
+                                    "type": "string"
+                                  },
+                                  "duration": {
+                                    "type": "number"
+                                  },
+                                  "width": {
+                                    "type": "number"
+                                  },
+                                  "height": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "status",
+                                  "thumb"
+                                ]
+                              },
+                              "styles": {
+                                "type": "object",
+                                "properties": {
+                                  "showAuthor": {
+                                    "type": "boolean"
+                                  },
+                                  "teaserStyle": {
+                                    "description": "Alternative UI Templates for article cards",
+                                    "enum": [
+                                      "big_without_text",
+                                      "small_with_text",
+                                      "small_without_text",
+                                      "standard"
+                                    ],
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "author": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "enum": [
+                                      "api",
+                                      "curate-backend"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "email": {
+                                    "type": "string"
+                                  },
+                                  "image": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "number"
+                                      },
+                                      "statusCopyright": {
+                                        "type": "number"
+                                      },
+                                      "rightholder": {
+                                        "type": "string"
+                                      },
+                                      "thumb": {
+                                        "type": "string"
+                                      },
+                                      "status": {
+                                        "enum": [
+                                          "error",
+                                          "ok",
+                                          "processing"
+                                        ],
+                                        "type": "string"
+                                      },
+                                      "url": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id",
+                                      "rightholder",
+                                      "status",
+                                      "statusCopyright",
+                                      "thumb"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "type"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "created",
+                              "id",
+                              "postedTime",
+                              "published",
+                              "type",
+                              "updated"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "storyId": {
+                                "type": "number"
+                              },
+                              "reactions": {
+                                "allOf": [
+                                  {
+                                    "description": "The number of reactions to each type",
+                                    "type": "object",
+                                    "properties": {
+                                      "like": {
+                                        "type": "number"
+                                      },
+                                      "love": {
+                                        "type": "number"
+                                      },
+                                      "haha": {
+                                        "type": "number"
+                                      },
+                                      "wow": {
+                                        "type": "number"
+                                      },
+                                      "sad": {
+                                        "type": "number"
+                                      },
+                                      "angry": {
+                                        "type": "number"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "myReaction": {
+                                        "enum": [
+                                          "angry",
+                                          "haha",
+                                          "like",
+                                          "love",
+                                          "sad",
+                                          "wow"
+                                        ],
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "data"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "chatId": {
+                      "type": "number"
+                    },
+                    "chatDescriptor": {
+                      "type": "string"
+                    },
+                    "channelId": {
+                      "type": "number"
+                    },
+                    "organisationId": {
+                      "type": "number"
+                    },
+                    "storyId": {
+                      "description": "Pinned mix ID",
+                      "type": "number"
+                    },
+                    "itemId": {
+                      "description": "Pinned card ID",
+                      "type": "number"
+                    },
+                    "pinnedContent": {
+                      "type": "object",
+                      "properties": {
+                        "pinType": {
+                          "enum": [
+                            "card",
+                            "mix"
+                          ],
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "storyIdPinned": {
+                      "description": "ID of mix of shared cards",
+                      "type": "number"
+                    },
+                    "type": {
+                      "enum": [
+                        "group",
+                        "p2p"
+                      ],
+                      "type": "string"
+                    },
+                    "accessType": {
+                      "enum": [
+                        "private",
+                        "publicRead",
+                        "publicWrite"
+                      ],
+                      "type": "string"
+                    },
+                    "usersCount": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "payload": {
+                      "type": "string"
+                    },
+                    "access": {
+                      "description": "User access to chat",
+                      "enum": [
+                        "admin",
+                        "banned",
+                        "r",
+                        "rw"
+                      ],
+                      "type": "string"
+                    },
+                    "thumbnails": {
+                      "description": "Array of available members images or initials",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "image": {
+                            "type": "string"
+                          },
+                          "initials": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "level": {
+                      "enum": [
+                        "channel",
+                        "organisation"
+                      ],
+                      "type": "string"
+                    },
+                    "recipientId": {
+                      "description": "Id of recipient user if p2p",
+                      "type": "number"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "accessType": {
+                    "enum": [
+                      "private",
+                      "publicRead",
+                      "publicWrite"
+                    ],
+                    "type": "string"
+                  },
+                  "payload": {
+                    "type": "string"
+                  },
+                  "storyId": {
+                    "type": "number"
+                  },
+                  "itemId": {
+                    "type": "number"
+                  },
+                  "level": {
+                    "enum": [
+                      "channel",
+                      "organisation"
+                    ],
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/audio": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Audio to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/image": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Image to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "limit": {
+                      "type": "number"
+                    },
+                    "offset": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "limit",
+                    "offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "item to create",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/CardEnumModel"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "type": "string"
+                  },
+                  "sourceName": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "quotePerson": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "quotePersonImageId": {
+                    "type": "string"
+                  },
+                  "quotePersonImage": {
+                    "type": "string"
+                  },
+                  "quoteSource": {
+                    "type": "string"
+                  },
+                  "quotePersonHandle": {
+                    "type": "string"
+                  },
+                  "videoId": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "quoteCreated": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/video": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Video to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/itemslist": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "coma separated ids of requested cards",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "type": {
+                        "$ref": "#/components/schemas/CardEnumModel"
+                      },
+                      "createdByLabel": {
+                        "type": "string"
+                      },
+                      "created": {
+                        "type": "string"
+                      },
+                      "postedTime": {
+                        "type": "string"
+                      },
+                      "updated": {
+                        "type": "string"
+                      },
+                      "published": {
+                        "type": "boolean"
+                      },
+                      "position": {
+                        "type": "number"
+                      },
+                      "headline": {
+                        "type": "string"
+                      },
+                      "quotePerson": {
+                        "type": "string"
+                      },
+                      "quotePersonHandle": {
+                        "type": "string"
+                      },
+                      "quote": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "sourceName": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "abstract": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "statusCopyright": {
+                            "type": "number"
+                          },
+                          "rightholder": {
+                            "type": "string"
+                          },
+                          "thumb": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "error",
+                              "ok",
+                              "processing"
+                            ],
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "rightholder",
+                          "status",
+                          "statusCopyright",
+                          "thumb"
+                        ]
+                      },
+                      "audio": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "thumb": {
+                            "type": "string"
+                          },
+                          "originalThumb": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "duration": {
+                            "type": "number"
+                          },
+                          "width": {
+                            "type": "number"
+                          },
+                          "height": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "status",
+                          "thumb"
+                        ]
+                      },
+                      "styles": {
+                        "type": "object",
+                        "properties": {
+                          "showAuthor": {
+                            "type": "boolean"
+                          },
+                          "teaserStyle": {
+                            "description": "Alternative UI Templates for article cards",
+                            "enum": [
+                              "big_without_text",
+                              "small_with_text",
+                              "small_without_text",
+                              "standard"
+                            ],
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "author": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "enum": [
+                              "api",
+                              "curate-backend"
+                            ],
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "statusCopyright": {
+                                "type": "number"
+                              },
+                              "rightholder": {
+                                "type": "string"
+                              },
+                              "thumb": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "enum": [
+                                  "error",
+                                  "ok",
+                                  "processing"
+                                ],
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "rightholder",
+                              "status",
+                              "statusCopyright",
+                              "thumb"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "created",
+                      "id",
+                      "postedTime",
+                      "published",
+                      "type",
+                      "updated"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/users": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "screenName": {
+                        "type": "string"
+                      },
+                      "access": {
+                        "enum": [
+                          "admin",
+                          "banned",
+                          "r",
+                          "rw"
+                        ],
+                        "type": "string"
+                      },
+                      "isDeleted": {
+                        "type": "number"
+                      },
+                      "imageUrl": {
+                        "type": "string"
+                      },
+                      "initials": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "description": "List of user IDs to add",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "bannedUsers": {
+                    "description": "List of users IDs. Disables sending add-service-message about users with these IDs.",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "self": {
+                    "description": "If true: will add user to public chat",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "description": "To change users self should contain only one item with current user ID",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "User ID",
+                          "type": "number"
+                        },
+                        "chatHidden": {
+                          "description": "It is only allowed to change self chatHidden property",
+                          "type": "boolean"
+                        },
+                        "access": {
+                          "description": "It is only allowed to change other members access (if current user has chat admin access)",
+                          "enum": [
+                            "admin",
+                            "banned",
+                            "r",
+                            "rw"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "users"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/users/remove": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "description": "List of user IDs to remove",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "self": {
+                    "description": "If true: will remove user from chat",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/chats": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "chats": {
+                      "description": "array of chats",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "access": {
+                            "enum": [
+                              "admin",
+                              "banned",
+                              "r",
+                              "w"
+                            ],
+                            "type": "string"
+                          },
+                          "chatId": {
+                            "type": "number"
+                          },
+                          "chatDescriptor": {
+                            "type": "string"
+                          },
+                          "channelId": {
+                            "type": "number"
+                          },
+                          "organisationId": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "payload": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "enum": [
+                              "group",
+                              "p2p"
+                            ],
+                            "type": "string"
+                          },
+                          "accessType": {
+                            "enum": [
+                              "private",
+                              "publicRead",
+                              "publicWrite"
+                            ],
+                            "type": "string"
+                          },
+                          "storyId": {
+                            "description": "pinned mix ID",
+                            "type": "number"
+                          },
+                          "itemId": {
+                            "description": "pinned card ID",
+                            "type": "number"
+                          },
+                          "storyIdPinned": {
+                            "description": "ID of mix of shared cards",
+                            "type": "number"
+                          },
+                          "storyPinnedEmpty": {
+                            "description": "if there are no pinned content in hidden mix",
+                            "type": "boolean"
+                          },
+                          "usersCount": {
+                            "type": "number"
+                          },
+                          "publicToJoin": {
+                            "description": "true if chat is public and user can join, false if user has already joined chat",
+                            "type": "boolean"
+                          },
+                          "thumbnails": {
+                            "description": "Array of available members images or initials",
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "image": {
+                                  "type": "string"
+                                },
+                                "initials": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "level": {
+                            "enum": [
+                              "channel",
+                              "organisation"
+                            ],
+                            "type": "string"
+                          },
+                          "recipientId": {
+                            "description": "Id of recipient user if p2p",
+                            "type": "number"
+                          },
+                          "created": {
+                            "type": "string"
+                          },
+                          "updated": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "token": {
+                      "description": "Should be used as authKey when initializing pubnub instance",
+                      "type": "string"
+                    },
+                    "publishKey": {
+                      "type": "string"
+                    },
+                    "subscribeKey": {
+                      "type": "string"
+                    },
+                    "cipherKey": {
+                      "type": "string"
+                    },
+                    "senderDevice": {
+                      "description": "should be used with sending message to prevent self pushes",
+                      "type": "object",
+                      "properties": {
+                        "ios": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "android": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "group",
+                      "p2p"
+                    ],
+                    "type": "string"
+                  },
+                  "level": {
+                    "enum": [
+                      "channel",
+                      "organisation"
+                    ],
+                    "type": "string"
+                  },
+                  "accessType": {
+                    "enum": [
+                      "private",
+                      "publicRead",
+                      "publicWrite"
+                    ],
+                    "type": "string"
+                  },
+                  "payload": {
+                    "type": "string"
+                  },
+                  "storyId": {
+                    "description": "Mix to pin",
+                    "type": "number"
+                  },
+                  "itemId": {
+                    "description": "Card to pin",
+                    "type": "number"
+                  },
+                  "users": {
+                    "description": "Array of users to add with 'rw' rights (without you). If type = 'p2p' should contain only one item",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "required": [
+                  "accessType",
+                  "level",
+                  "name",
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "chatId": {
+                      "type": "number"
+                    },
+                    "chatDescriptor": {
+                      "type": "string"
+                    },
+                    "channelId": {
+                      "type": "number"
+                    },
+                    "organisationId": {
+                      "type": "number"
+                    },
+                    "storyId": {
+                      "description": "Pinned mix ID",
+                      "type": "number"
+                    },
+                    "itemId": {
+                      "description": "Pinned card ID",
+                      "type": "number"
+                    },
+                    "pinnedContent": {
+                      "type": "object",
+                      "properties": {
+                        "pinType": {
+                          "enum": [
+                            "card",
+                            "mix"
+                          ],
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "type": {
+                      "enum": [
+                        "group",
+                        "p2p"
+                      ],
+                      "type": "string"
+                    },
+                    "accessType": {
+                      "enum": [
+                        "private",
+                        "publicRead",
+                        "publicWrite"
+                      ],
+                      "type": "string"
+                    },
+                    "usersCount": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "payload": {
+                      "type": "string"
+                    },
+                    "access": {
+                      "description": "User access to chat",
+                      "enum": [
+                        "admin",
+                        "banned",
+                        "r",
+                        "rw"
+                      ],
+                      "type": "string"
+                    },
+                    "thumbnails": {
+                      "description": "Array of available members images or initials",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "image": {
+                            "type": "string"
+                          },
+                          "initials": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "level": {
+                      "enum": [
+                        "channel",
+                        "organisation"
+                      ],
+                      "type": "string"
+                    },
+                    "recipientId": {
+                      "description": "Id of recipient user if p2p",
+                      "type": "number"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "excludeItems",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "excludePinned",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ]
+      }
+    },
+    "samples/openapi/api/v3/channels/{channelId}/notifications": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "published",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "limit": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "priority": {
+                            "enum": [
+                              "high",
+                              "normal"
+                            ],
+                            "type": "string"
+                          },
+                          "isSent": {
+                            "type": "boolean"
+                          },
+                          "ownerId": {
+                            "type": "string"
+                          },
+                          "organisationId": {
+                            "type": "number"
+                          },
+                          "deliveringTime": {
+                            "type": "string"
+                          },
+                          "expirationTime": {
+                            "type": "string"
+                          },
+                          "created": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "created",
+                          "deliveringTime",
+                          "expirationTime",
+                          "id",
+                          "isSent",
+                          "message",
+                          "organisationId",
+                          "ownerId",
+                          "priority",
+                          "title"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/channels": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "channels"
+        ],
+        "parameters": [
+          {
+            "name": "unpublished",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "read-only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type": "string"
+                      },
+                      "created": {
+                        "type": "string"
+                      },
+                      "subdomain": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "ownerEmail": {
+                        "type": "string"
+                      },
+                      "ownerName": {
+                        "type": "string"
+                      },
+                      "organisationName": {
+                        "type": "string"
+                      },
+                      "ownerId": {
+                        "type": "number"
+                      },
+                      "organisationId": {
+                        "type": "number"
+                      },
+                      "pinnedStoryId": {
+                        "type": "number"
+                      },
+                      "stories": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "title": {
+                              "type": "number"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "ownerId": {
+                              "type": "number"
+                            },
+                            "allowAccessToEditorLimited": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "allowAccessToEditorLimited",
+                            "id",
+                            "ownerId",
+                            "status",
+                            "title"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "created",
+                      "id",
+                      "name",
+                      "organisationId",
+                      "ownerEmail",
+                      "ownerId",
+                      "ownerName",
+                      "role",
+                      "stories",
+                      "subdomain",
+                      "url"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/{chatId}/items/{itemId}": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "formattedText": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/CardEnumModel"
+                    },
+                    "createdByLabel": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "postedTime": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "position": {
+                      "type": "number"
+                    },
+                    "headline": {
+                      "type": "string"
+                    },
+                    "quotePerson": {
+                      "type": "string"
+                    },
+                    "quotePersonHandle": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "sourceName": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "abstract": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "statusCopyright": {
+                          "type": "number"
+                        },
+                        "rightholder": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "enum": [
+                            "error",
+                            "ok",
+                            "processing"
+                          ],
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "rightholder",
+                        "status",
+                        "statusCopyright",
+                        "thumb"
+                      ]
+                    },
+                    "audio": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "originalThumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "duration": {
+                          "type": "number"
+                        },
+                        "width": {
+                          "type": "number"
+                        },
+                        "height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "status",
+                        "thumb"
+                      ]
+                    },
+                    "styles": {
+                      "type": "object",
+                      "properties": {
+                        "showAuthor": {
+                          "type": "boolean"
+                        },
+                        "teaserStyle": {
+                          "description": "Alternative UI Templates for article cards",
+                          "enum": [
+                            "big_without_text",
+                            "small_with_text",
+                            "small_without_text",
+                            "standard"
+                          ],
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "api",
+                            "curate-backend"
+                          ],
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "statusCopyright": {
+                              "type": "number"
+                            },
+                            "rightholder": {
+                              "type": "string"
+                            },
+                            "thumb": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "enum": [
+                                "error",
+                                "ok",
+                                "processing"
+                              ],
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "rightholder",
+                            "status",
+                            "statusCopyright",
+                            "thumb"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "created",
+                    "id",
+                    "postedTime",
+                    "published",
+                    "type",
+                    "updated"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/{chatId}/items/audio": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Audio to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/{chatId}/items/image": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Image to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/{chatId}/items": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "coma separated ids of requested cards",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "limit": {
+                      "type": "number"
+                    },
+                    "offset": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "limit",
+                    "offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "item to create",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/CardEnumModel"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "type": "string"
+                  },
+                  "sourceName": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "quotePerson": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "quotePersonImageId": {
+                    "type": "string"
+                  },
+                  "quotePersonImage": {
+                    "type": "string"
+                  },
+                  "quoteSource": {
+                    "type": "string"
+                  },
+                  "quotePersonHandle": {
+                    "type": "string"
+                  },
+                  "videoId": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "quoteCreated": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/{chatId}/items/video": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "chats"
+        ],
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Video to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  },
+                  "formattedText": {
+                    "description": "text message to send to pubnub",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/chats/keys": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "chats",
+          "keys"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "description": "Should be used as authKey when initializing pubnub instance",
+                      "type": "string"
+                    },
+                    "publishKey": {
+                      "type": "string"
+                    },
+                    "subscribeKey": {
+                      "type": "string"
+                    },
+                    "cipherKey": {
+                      "type": "string"
+                    },
+                    "senderDevice": {
+                      "description": "should be used with sending message to prevent self pushes",
+                      "type": "object",
+                      "properties": {
+                        "ios": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "android": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/audio": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "audio"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "audio to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/image": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "image"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Image to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "number"
+                    },
+                    "height": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/parse": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "parse"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/components/schemas/CardEnumModel"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "sourceName": {
+                      "type": "string"
+                    },
+                    "abstract": {
+                      "type": "string"
+                    },
+                    "quotePerson": {
+                      "type": "string"
+                    },
+                    "quotePersonHandle": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "quoteSource": {
+                      "type": "string"
+                    },
+                    "quoteCreated": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "url"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/story/{storyId}/audio": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "story"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Audio to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/story/{storyId}/image": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "story"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Image to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/story/{storyId}": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "story"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/CardEnumModel"
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "type": "string"
+                  },
+                  "sourceName": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "imageId": {
+                    "type": "number"
+                  },
+                  "quotePerson": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "quotePersonImageId": {
+                    "type": "number"
+                  },
+                  "quotePersonImage": {
+                    "type": "string"
+                  },
+                  "quoteSource": {
+                    "type": "string"
+                  },
+                  "quotePersonHandle": {
+                    "type": "string"
+                  },
+                  "videoId": {
+                    "type": "number"
+                  },
+                  "video": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "audioId": {
+                    "type": "number"
+                  },
+                  "audio": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "quoteCreated": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/story/{storyId}/video": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "story"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "Video to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "headline": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "published": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/extension/video": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "extension",
+          "video"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "description": "video to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "number"
+                    },
+                    "height": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/fcm_token": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "fcm_token"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fcmToken": {
+                    "type": "string"
+                  },
+                  "deviceToken": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "fcmToken"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/info": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "info"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "force_update",
+                        "no_update"
+                      ],
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/login": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "login"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pwd": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "fcmToken": {
+                    "type": "string"
+                  },
+                  "deviceToken": {
+                    "type": "string"
+                  },
+                  "otp": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "email",
+                  "pwd"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "avatar": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "email",
+                        "id",
+                        "url",
+                        "username"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "token": {
+                          "type": "string"
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "isAppLocked": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "isAppLocked"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "token"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/logout": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "logout"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fcmToken": {
+                    "type": "string"
+                  },
+                  "deviceToken": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/me": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "me"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "avatar": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "email",
+                        "id",
+                        "url",
+                        "username"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "isAppLocked": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "isAppLocked"
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/organisation": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "organisation"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "subdomain": {
+                      "type": "string"
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "androidStoreLink": {
+                      "type": "string"
+                    },
+                    "androidAppId": {
+                      "type": "string"
+                    },
+                    "androidHokeyStoreLink": {
+                      "type": "string"
+                    },
+                    "androidAppHokeyId": {
+                      "type": "string"
+                    },
+                    "iosStoreLink": {
+                      "type": "string"
+                    },
+                    "iosAppId": {
+                      "type": "string"
+                    },
+                    "iosHokeyStoreLink": {
+                      "type": "string"
+                    },
+                    "iosAppHokeyId": {
+                      "type": "string"
+                    },
+                    "fcmServerKeyId": {
+                      "type": "number"
+                    },
+                    "allowToStoreOriginalImageFile": {
+                      "type": "string"
+                    },
+                    "twoFactorForce": {
+                      "type": "string"
+                    },
+                    "sessionExpirationTime": {
+                      "type": "string"
+                    },
+                    "appLockEnabled": {
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "uuid": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "isSystem": {
+                      "type": "boolean"
+                    },
+                    "pinnedStoryId": {
+                      "type": "number"
+                    },
+                    "hasPinnedMixes": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "allowToStoreOriginalImageFile",
+                    "appLockEnabled",
+                    "created",
+                    "hasPinnedMixes",
+                    "id",
+                    "isSystem",
+                    "locale",
+                    "name",
+                    "pinnedStoryId",
+                    "sessionExpirationTime",
+                    "subdomain",
+                    "twoFactorForce",
+                    "uuid"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/organisation/users": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "organisation",
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "offset": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "email": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "number"
+                          },
+                          "initials": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "type": "string"
+                          },
+                          "roleScope": {
+                            "type": "string"
+                          },
+                          "screenName": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "email",
+                          "id",
+                          "initials",
+                          "role",
+                          "roleScope",
+                          "screenName"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "data"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/stories/{storyId}/items/{itemId}": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "stories"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/CardEnumModel"
+                    },
+                    "createdByLabel": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "postedTime": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "position": {
+                      "type": "number"
+                    },
+                    "headline": {
+                      "type": "string"
+                    },
+                    "quotePerson": {
+                      "type": "string"
+                    },
+                    "quotePersonHandle": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "sourceName": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "abstract": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "statusCopyright": {
+                          "type": "number"
+                        },
+                        "rightholder": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "enum": [
+                            "error",
+                            "ok",
+                            "processing"
+                          ],
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "rightholder",
+                        "status",
+                        "statusCopyright",
+                        "thumb"
+                      ]
+                    },
+                    "audio": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "originalThumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "duration": {
+                          "type": "number"
+                        },
+                        "width": {
+                          "type": "number"
+                        },
+                        "height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "status",
+                        "thumb"
+                      ]
+                    },
+                    "styles": {
+                      "type": "object",
+                      "properties": {
+                        "showAuthor": {
+                          "type": "boolean"
+                        },
+                        "teaserStyle": {
+                          "description": "Alternative UI Templates for article cards",
+                          "enum": [
+                            "big_without_text",
+                            "small_with_text",
+                            "small_without_text",
+                            "standard"
+                          ],
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "api",
+                            "curate-backend"
+                          ],
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "statusCopyright": {
+                              "type": "number"
+                            },
+                            "rightholder": {
+                              "type": "string"
+                            },
+                            "thumb": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "enum": [
+                                "error",
+                                "ok",
+                                "processing"
+                              ],
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "rightholder",
+                            "status",
+                            "statusCopyright",
+                            "thumb"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "created",
+                    "id",
+                    "postedTime",
+                    "published",
+                    "type",
+                    "updated"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/stories/{storyId}/items/{itemId}/reaction": {
+      "post": {
+        "tags": [
+          "api",
+          "v3",
+          "stories"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reaction": {
+                    "enum": [
+                      "angry",
+                      "haha",
+                      "like",
+                      "love",
+                      "sad",
+                      "wow"
+                    ],
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "enum": [
+                        "add",
+                        "remove",
+                        "replace"
+                      ],
+                      "type": "string"
+                    },
+                    "reactions": {
+                      "allOf": [
+                        {
+                          "description": "The number of reactions to each type",
+                          "type": "object",
+                          "properties": {
+                            "like": {
+                              "type": "number"
+                            },
+                            "love": {
+                              "type": "number"
+                            },
+                            "haha": {
+                              "type": "number"
+                            },
+                            "wow": {
+                              "type": "number"
+                            },
+                            "sad": {
+                              "type": "number"
+                            },
+                            "angry": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "myReaction": {
+                              "enum": [
+                                "angry",
+                                "haha",
+                                "like",
+                                "love",
+                                "sad",
+                                "wow"
+                              ],
+                              "type": "string"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "previousStatus": {
+                      "enum": [
+                        "angry",
+                        "haha",
+                        "like",
+                        "love",
+                        "sad",
+                        "wow"
+                      ],
+                      "type": "string"
+                    },
+                    "userType": {
+                      "enum": [
+                        "anonymous",
+                        "unique"
+                      ],
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/stories/{storyId}/items": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "stories"
+        ],
+        "parameters": [
+          {
+            "name": "storyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "limit": {
+                      "type": "number"
+                    },
+                    "offset": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "type": {
+                            "$ref": "#/components/schemas/CardEnumModel"
+                          },
+                          "createdByLabel": {
+                            "type": "string"
+                          },
+                          "created": {
+                            "type": "string"
+                          },
+                          "postedTime": {
+                            "type": "string"
+                          },
+                          "updated": {
+                            "type": "string"
+                          },
+                          "published": {
+                            "type": "boolean"
+                          },
+                          "position": {
+                            "type": "number"
+                          },
+                          "headline": {
+                            "type": "string"
+                          },
+                          "quotePerson": {
+                            "type": "string"
+                          },
+                          "quotePersonHandle": {
+                            "type": "string"
+                          },
+                          "quote": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "sourceName": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "abstract": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "statusCopyright": {
+                                "type": "number"
+                              },
+                              "rightholder": {
+                                "type": "string"
+                              },
+                              "thumb": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "enum": [
+                                  "error",
+                                  "ok",
+                                  "processing"
+                                ],
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "rightholder",
+                              "status",
+                              "statusCopyright",
+                              "thumb"
+                            ]
+                          },
+                          "audio": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "thumb": {
+                                "type": "string"
+                              },
+                              "originalThumb": {
+                                "type": "string"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "duration": {
+                                "type": "number"
+                              },
+                              "width": {
+                                "type": "number"
+                              },
+                              "height": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "status",
+                              "thumb"
+                            ]
+                          },
+                          "styles": {
+                            "type": "object",
+                            "properties": {
+                              "showAuthor": {
+                                "type": "boolean"
+                              },
+                              "teaserStyle": {
+                                "description": "Alternative UI Templates for article cards",
+                                "enum": [
+                                  "big_without_text",
+                                  "small_with_text",
+                                  "small_without_text",
+                                  "standard"
+                                ],
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "author": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "enum": [
+                                  "api",
+                                  "curate-backend"
+                                ],
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "image": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "statusCopyright": {
+                                    "type": "number"
+                                  },
+                                  "rightholder": {
+                                    "type": "string"
+                                  },
+                                  "thumb": {
+                                    "type": "string"
+                                  },
+                                  "status": {
+                                    "enum": [
+                                      "error",
+                                      "ok",
+                                      "processing"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "rightholder",
+                                  "status",
+                                  "statusCopyright",
+                                  "thumb"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "type"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "created",
+                          "id",
+                          "postedTime",
+                          "published",
+                          "type",
+                          "updated"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "limit",
+                    "offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/user/{userId}": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "avatar": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "email",
+                    "id",
+                    "url",
+                    "username"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/user": {
+      "get": {
+        "tags": [
+          "api",
+          "v3",
+          "user"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "OK",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "email",
+                      "id",
+                      "url",
+                      "username"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/openapi/api/v3/user/profile": {
+      "put": {
+        "tags": [
+          "api",
+          "v3",
+          "user",
+          "profile"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "screenName": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "description": "Profile picture to upload.",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  },
+                  "imageId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CardEnumModel": {
+        "enum": [
+          "article",
+          "audio",
+          "editorial",
+          "image",
+          "quote",
+          "video"
+        ],
+        "type": "string"
+      },
+      "ModelMixV3": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              },
+              "ticker": {
+                "type": "boolean"
+              },
+              "readOnly": {
+                "type": "boolean"
+              },
+              "shareUrl": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "includeInNewsFeed": {
+                "type": "boolean"
+              },
+              "displayItemUpdatedTime": {
+                "type": "string"
+              },
+              "image": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "statusCopyright": {
+                    "type": "number"
+                  },
+                  "rightholder": {
+                    "type": "string"
+                  },
+                  "thumb": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "error",
+                      "ok",
+                      "processing"
+                    ],
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "rightholder",
+                  "status",
+                  "statusCopyright",
+                  "thumb"
+                ]
+              }
+            },
+            "required": [
+              "created",
+              "id",
+              "includeInNewsFeed",
+              "previewUrl",
+              "readOnly",
+              "shareUrl",
+              "subtitle",
+              "ticker",
+              "title",
+              "updated"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "cards": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/CardEnumModel"
+                    },
+                    "createdByLabel": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "postedTime": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "published": {
+                      "type": "boolean"
+                    },
+                    "position": {
+                      "type": "number"
+                    },
+                    "headline": {
+                      "type": "string"
+                    },
+                    "quotePerson": {
+                      "type": "string"
+                    },
+                    "quotePersonHandle": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "sourceName": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "abstract": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "statusCopyright": {
+                          "type": "number"
+                        },
+                        "rightholder": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "enum": [
+                            "error",
+                            "ok",
+                            "processing"
+                          ],
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "rightholder",
+                        "status",
+                        "statusCopyright",
+                        "thumb"
+                      ]
+                    },
+                    "audio": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "thumb": {
+                          "type": "string"
+                        },
+                        "originalThumb": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "duration": {
+                          "type": "number"
+                        },
+                        "width": {
+                          "type": "number"
+                        },
+                        "height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "status",
+                        "thumb"
+                      ]
+                    },
+                    "styles": {
+                      "type": "object",
+                      "properties": {
+                        "showAuthor": {
+                          "type": "boolean"
+                        },
+                        "teaserStyle": {
+                          "description": "Alternative UI Templates for article cards",
+                          "enum": [
+                            "big_without_text",
+                            "small_with_text",
+                            "small_without_text",
+                            "standard"
+                          ],
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "api",
+                            "curate-backend"
+                          ],
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "statusCopyright": {
+                              "type": "number"
+                            },
+                            "rightholder": {
+                              "type": "string"
+                            },
+                            "thumb": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "enum": [
+                                "error",
+                                "ok",
+                                "processing"
+                              ],
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "rightholder",
+                            "status",
+                            "statusCopyright",
+                            "thumb"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "created",
+                    "id",
+                    "postedTime",
+                    "published",
+                    "type",
+                    "updated"
+                  ]
+                }
+              },
+              "itemsNum": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "cards",
+              "itemsNum"
+            ]
+          }
+        ]
+      },
+      "FormData": {
+        "type": "object"
+      },
+      "File": {
+        "type": "object",
+        "properties": {
+          "lastModified": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "webkitRelativePath": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "lastModified",
+          "name",
+          "size",
+          "type",
+          "webkitRelativePath"
+        ]
+      },
+      "ReadStream": {
+        "description": "Instances of `fs.ReadStream` are created and returned using the {@link createReadStream} function.",
+        "type": "object",
+        "properties": {
+          "bytesRead": {
+            "description": "The number of bytes that have been read so far.",
+            "type": "number"
+          },
+          "path": {
+            "description": "The path to the file the stream is reading from as specified in the first\nargument to `fs.createReadStream()`. If `path` is passed as a string, then`readStream.path` will be a string. If `path` is passed as a `Buffer`, then`readStream.path` will be a\n`Buffer`. If `fd` is specified, then`readStream.path` will be `undefined`.",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "patternProperties": {
+                  "^[0-9]+$": {
+                    "type": "number"
+                  }
+                },
+                "properties": {
+                  "BYTES_PER_ELEMENT": {
+                    "type": "number"
+                  },
+                  "buffer": {
+                    "$ref": "#/components/schemas/ArrayBufferLike"
+                  },
+                  "byteLength": {
+                    "type": "number"
+                  },
+                  "byteOffset": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "number"
+                  },
+                  "__@toStringTag@188024": {
+                    "type": "string",
+                    "const": "Uint8Array"
+                  }
+                },
+                "required": [
+                  "BYTES_PER_ELEMENT",
+                  "__@toStringTag@188024",
+                  "buffer",
+                  "byteLength",
+                  "byteOffset",
+                  "length"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "pending": {
+            "description": "This property is `true` if the underlying file has not been opened yet,\ni.e. before the `'ready'` event is emitted.",
+            "type": "boolean"
+          },
+          "readableAborted": {
+            "description": "Returns whether the stream was destroyed or errored before emitting `'end'`.",
+            "type": "boolean"
+          },
+          "readable": {
+            "description": "Is `true` if it is safe to call {@link read}, which means\nthe stream has not been destroyed or emitted `'error'` or `'end'`.",
+            "type": "boolean"
+          },
+          "readableDidRead": {
+            "description": "Returns whether `'data'` has been emitted.",
+            "type": "boolean"
+          },
+          "readableEncoding": {
+            "description": "Getter for the property `encoding` of a given `Readable` stream. The `encoding` property can be set using the {@link setEncoding} method.",
+            "anyOf": [
+              {
+                "enum": [
+                  "ascii",
+                  "base64",
+                  "base64url",
+                  "binary",
+                  "hex",
+                  "latin1",
+                  "ucs-2",
+                  "ucs2",
+                  "utf-16le",
+                  "utf-8",
+                  "utf16le",
+                  "utf8"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "readableEnded": {
+            "description": "Becomes `true` when [`'end'`](https://nodejs.org/docs/latest-v22.x/api/stream.html#event-end) event is emitted.",
+            "type": "boolean"
+          },
+          "readableFlowing": {
+            "description": "This property reflects the current state of a `Readable` stream as described\nin the [Three states](https://nodejs.org/docs/latest-v22.x/api/stream.html#three-states) section.",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "readableHighWaterMark": {
+            "description": "Returns the value of `highWaterMark` passed when creating this `Readable`.",
+            "type": "number"
+          },
+          "readableLength": {
+            "description": "This property contains the number of bytes (or objects) in the queue\nready to be read. The value provides introspection data regarding\nthe status of the `highWaterMark`.",
+            "type": "number"
+          },
+          "readableObjectMode": {
+            "description": "Getter for the property `objectMode` of a given `Readable` stream.",
+            "type": "boolean"
+          },
+          "destroyed": {
+            "description": "Is `true` after `readable.destroy()` has been called.",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Is `true` after `'close'` has been emitted.",
+            "type": "boolean"
+          },
+          "errored": {
+            "description": "Returns error if the stream has been destroyed with an error.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "bytesRead",
+          "closed",
+          "destroyed",
+          "errored",
+          "path",
+          "pending",
+          "readable",
+          "readableAborted",
+          "readableDidRead",
+          "readableEncoding",
+          "readableEnded",
+          "readableFlowing",
+          "readableHighWaterMark",
+          "readableLength",
+          "readableObjectMode"
+        ]
+      },
+      "ArrayBufferLike": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ArrayBuffer"
+          },
+          {
+            "$ref": "#/components/schemas/SharedArrayBuffer"
+          }
+        ]
+      },
+      "ArrayBuffer": {
+        "type": "object",
+        "properties": {
+          "byteLength": {
+            "type": "number"
+          },
+          "__@toStringTag@188024": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "__@toStringTag@188024",
+          "byteLength"
+        ]
+      },
+      "SharedArrayBuffer": {
+        "type": "object",
+        "properties": {
+          "byteLength": {
+            "type": "number"
+          },
+          "__@species@188482": {
+            "$ref": "#/components/schemas/SharedArrayBuffer"
+          },
+          "__@toStringTag@188024": {
+            "type": "string",
+            "const": "SharedArrayBuffer"
+          }
+        },
+        "required": [
+          "__@species@188482",
+          "__@toStringTag@188024",
+          "byteLength"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "stack": {
+            "type": "string"
+          },
+          "cause": {}
+        },
+        "required": [
+          "message",
+          "name"
+        ]
+      }
+    }
+  }
+}

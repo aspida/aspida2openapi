@@ -1,0 +1,1223 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aspida to OpenAPI",
+    "version": "v0.0"
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "samples/swagger/hello": {
+      "get": {
+        "tags": [
+          "hello"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "defaults to World if not given",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "returns a greeting",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/pet/{petId}": {
+      "get": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "category": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "photoUrls": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "status": {
+                      "description": "pet status in the store",
+                      "enum": [
+                        "available",
+                        "pending",
+                        "sold"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "photoUrls"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "Updated name of the pet",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "Updated status of the pet",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ]
+      }
+    },
+    "samples/swagger/pet/{petId}/uploadImage": {
+      "post": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "additionalMetadata": {
+                    "description": "Additional data to pass to server",
+                    "type": "string"
+                  },
+                  "file": {
+                    "description": "file to upload",
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/File"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ReadStream"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/pet/findByStatus": {
+      "get": {
+        "tags": [
+          "pet",
+          "findByStatus"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "Status values that need to be considered for filter",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "available",
+                  "pending",
+                  "sold"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "category": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "photoUrls": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "status": {
+                        "description": "pet status in the store",
+                        "enum": [
+                          "available",
+                          "pending",
+                          "sold"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "photoUrls"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/pet": {
+      "post": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Pet object that needs to be added to the store",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "category": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "photoUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "status": {
+                    "description": "pet status in the store",
+                    "enum": [
+                      "available",
+                      "pending",
+                      "sold"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "photoUrls"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pet"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Pet object that needs to be added to the store",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "category": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "photoUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "status": {
+                    "description": "pet status in the store",
+                    "enum": [
+                      "available",
+                      "pending",
+                      "sold"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "photoUrls"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/store/inventory": {
+      "get": {
+        "tags": [
+          "store",
+          "inventory"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/store/order/{orderId}": {
+      "get": {
+        "tags": [
+          "store",
+          "order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "petId": {
+                      "type": "number"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    },
+                    "shipDate": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Order Status",
+                      "enum": [
+                        "approved",
+                        "delivered",
+                        "placed"
+                      ],
+                      "type": "string"
+                    },
+                    "complete": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "store",
+          "order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ]
+      }
+    },
+    "samples/swagger/store/order": {
+      "post": {
+        "tags": [
+          "store",
+          "order"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "order placed for purchasing the pet",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "petId": {
+                    "type": "number"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  },
+                  "shipDate": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "Order Status",
+                    "enum": [
+                      "approved",
+                      "delivered",
+                      "placed"
+                    ],
+                    "type": "string"
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "petId": {
+                      "type": "number"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    },
+                    "shipDate": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Order Status",
+                      "enum": [
+                        "approved",
+                        "delivered",
+                        "placed"
+                      ],
+                      "type": "string"
+                    },
+                    "complete": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/user/{username}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "firstName": {
+                      "type": "string"
+                    },
+                    "lastName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "userStatus": {
+                      "description": "User Status",
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Updated user object",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "userStatus": {
+                    "description": "User Status",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "samples/swagger/user/createWithArray": {
+      "post": {
+        "tags": [
+          "user",
+          "createWithArray"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "List of user object",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "firstName": {
+                      "type": "string"
+                    },
+                    "lastName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "userStatus": {
+                      "description": "User Status",
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/user/createWithList": {
+      "post": {
+        "tags": [
+          "user",
+          "createWithList"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "List of user object",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "firstName": {
+                      "type": "string"
+                    },
+                    "lastName": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "userStatus": {
+                      "description": "User Status",
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/user": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Created user object",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "userStatus": {
+                    "description": "User Status",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "samples/swagger/user/login": {
+      "get": {
+        "tags": [
+          "user",
+          "login"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "The user name for login",
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "The password for login in clear text",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "successful operation",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "URLSearchParams": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "description": "The total number of parameter entries.",
+            "type": "number"
+          }
+        },
+        "required": [
+          "size"
+        ]
+      },
+      "FormData": {
+        "type": "object"
+      },
+      "File": {
+        "type": "object",
+        "properties": {
+          "lastModified": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "webkitRelativePath": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "lastModified",
+          "name",
+          "size",
+          "type",
+          "webkitRelativePath"
+        ]
+      },
+      "ReadStream": {
+        "description": "Instances of `fs.ReadStream` are created and returned using the {@link createReadStream} function.",
+        "type": "object",
+        "properties": {
+          "bytesRead": {
+            "description": "The number of bytes that have been read so far.",
+            "type": "number"
+          },
+          "path": {
+            "description": "The path to the file the stream is reading from as specified in the first\nargument to `fs.createReadStream()`. If `path` is passed as a string, then`readStream.path` will be a string. If `path` is passed as a `Buffer`, then`readStream.path` will be a\n`Buffer`. If `fd` is specified, then`readStream.path` will be `undefined`.",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "patternProperties": {
+                  "^[0-9]+$": {
+                    "type": "number"
+                  }
+                },
+                "properties": {
+                  "BYTES_PER_ELEMENT": {
+                    "type": "number"
+                  },
+                  "buffer": {
+                    "$ref": "#/components/schemas/ArrayBufferLike"
+                  },
+                  "byteLength": {
+                    "type": "number"
+                  },
+                  "byteOffset": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "number"
+                  },
+                  "__@toStringTag@23": {
+                    "type": "string",
+                    "const": "Uint8Array"
+                  }
+                },
+                "required": [
+                  "BYTES_PER_ELEMENT",
+                  "__@toStringTag@23",
+                  "buffer",
+                  "byteLength",
+                  "byteOffset",
+                  "length"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "pending": {
+            "description": "This property is `true` if the underlying file has not been opened yet,\ni.e. before the `'ready'` event is emitted.",
+            "type": "boolean"
+          },
+          "readableAborted": {
+            "description": "Returns whether the stream was destroyed or errored before emitting `'end'`.",
+            "type": "boolean"
+          },
+          "readable": {
+            "description": "Is `true` if it is safe to call {@link read}, which means\nthe stream has not been destroyed or emitted `'error'` or `'end'`.",
+            "type": "boolean"
+          },
+          "readableDidRead": {
+            "description": "Returns whether `'data'` has been emitted.",
+            "type": "boolean"
+          },
+          "readableEncoding": {
+            "description": "Getter for the property `encoding` of a given `Readable` stream. The `encoding` property can be set using the {@link setEncoding} method.",
+            "anyOf": [
+              {
+                "enum": [
+                  "ascii",
+                  "base64",
+                  "base64url",
+                  "binary",
+                  "hex",
+                  "latin1",
+                  "ucs-2",
+                  "ucs2",
+                  "utf-16le",
+                  "utf-8",
+                  "utf16le",
+                  "utf8"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "readableEnded": {
+            "description": "Becomes `true` when [`'end'`](https://nodejs.org/docs/latest-v22.x/api/stream.html#event-end) event is emitted.",
+            "type": "boolean"
+          },
+          "readableFlowing": {
+            "description": "This property reflects the current state of a `Readable` stream as described\nin the [Three states](https://nodejs.org/docs/latest-v22.x/api/stream.html#three-states) section.",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "readableHighWaterMark": {
+            "description": "Returns the value of `highWaterMark` passed when creating this `Readable`.",
+            "type": "number"
+          },
+          "readableLength": {
+            "description": "This property contains the number of bytes (or objects) in the queue\nready to be read. The value provides introspection data regarding\nthe status of the `highWaterMark`.",
+            "type": "number"
+          },
+          "readableObjectMode": {
+            "description": "Getter for the property `objectMode` of a given `Readable` stream.",
+            "type": "boolean"
+          },
+          "destroyed": {
+            "description": "Is `true` after `readable.destroy()` has been called.",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Is `true` after `'close'` has been emitted.",
+            "type": "boolean"
+          },
+          "errored": {
+            "description": "Returns error if the stream has been destroyed with an error.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "bytesRead",
+          "closed",
+          "destroyed",
+          "errored",
+          "path",
+          "pending",
+          "readable",
+          "readableAborted",
+          "readableDidRead",
+          "readableEncoding",
+          "readableEnded",
+          "readableFlowing",
+          "readableHighWaterMark",
+          "readableLength",
+          "readableObjectMode"
+        ]
+      },
+      "ArrayBufferLike": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ArrayBuffer"
+          },
+          {
+            "$ref": "#/components/schemas/SharedArrayBuffer"
+          }
+        ]
+      },
+      "ArrayBuffer": {
+        "type": "object",
+        "properties": {
+          "byteLength": {
+            "type": "number"
+          },
+          "__@toStringTag@23": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "__@toStringTag@23",
+          "byteLength"
+        ]
+      },
+      "SharedArrayBuffer": {
+        "type": "object",
+        "properties": {
+          "byteLength": {
+            "type": "number"
+          },
+          "__@species@481": {
+            "$ref": "#/components/schemas/SharedArrayBuffer"
+          },
+          "__@toStringTag@23": {
+            "type": "string",
+            "const": "SharedArrayBuffer"
+          }
+        },
+        "required": [
+          "__@species@481",
+          "__@toStringTag@23",
+          "byteLength"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "stack": {
+            "type": "string"
+          },
+          "cause": {}
+        },
+        "required": [
+          "message",
+          "name"
+        ]
+      }
+    }
+  }
+}
