@@ -1,14 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "path api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {},
   "components": {}
 }

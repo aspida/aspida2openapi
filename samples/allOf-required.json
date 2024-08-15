@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "allOf-required api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/allOf-required/path": {
+    "/path": {
       "get": {
         "tags": [
           "path"

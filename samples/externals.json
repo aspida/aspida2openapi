@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "externals api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/externals/users/{user_id}/orders/{order_id}": {
+    "/users/{user_id}/orders/{order_id}": {
       "get": {
         "tags": [
           "users"
@@ -105,7 +100,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/orders": {
+    "/users/{user_id}/orders": {
       "get": {
         "tags": [
           "users"
@@ -205,7 +200,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/orders/purchase/invoice": {
+    "/users/{user_id}/orders/purchase/invoice": {
       "post": {
         "tags": [
           "users"
@@ -315,7 +310,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/orders/purchase/wallet": {
+    "/users/{user_id}/orders/purchase/wallet": {
       "post": {
         "tags": [
           "users"
@@ -429,7 +424,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/orders/unsubscribe": {
+    "/users/{user_id}/orders/unsubscribe": {
       "post": {
         "tags": [
           "users"
@@ -535,7 +530,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/orders/update/renew": {
+    "/users/{user_id}/orders/update/renew": {
       "post": {
         "tags": [
           "users"
@@ -646,7 +641,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders": {
+    "/users/{user_id}/phone-numbers/{phone_number}/orders": {
       "get": {
         "tags": [
           "users"
@@ -745,7 +740,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/invoice": {
+    "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/invoice": {
       "post": {
         "tags": [
           "users"
@@ -859,7 +854,7 @@
         }
       }
     },
-    "samples/externals/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/wallet": {
+    "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/wallet": {
       "post": {
         "tags": [
           "users"

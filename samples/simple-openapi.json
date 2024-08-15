@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "simple-openapi api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/simple/dummy/2": {
+    "/dummy/2": {
       "put": {
         "tags": [
           "dummy",
@@ -19,7 +14,7 @@
         "parameters": []
       }
     },
-    "samples/simple/dummy/{a_1}/simple": {
+    "/dummy/{a_1}/simple": {
       "put": {
         "tags": [
           "dummy"
@@ -36,7 +31,7 @@
         ]
       }
     },
-    "samples/simple/dummy/{id}/content": {
+    "/dummy/{id}/content": {
       "put": {
         "tags": [
           "dummy"
@@ -65,7 +60,7 @@
         }
       }
     },
-    "samples/simple/dummy/{id}/query": {
+    "/dummy/{id}/query": {
       "put": {
         "tags": [
           "dummy"
@@ -91,7 +86,7 @@
         ]
       }
     },
-    "samples/simple/dummy/{id}/simple": {
+    "/dummy/{id}/simple": {
       "put": {
         "tags": [
           "dummy"
@@ -108,7 +103,7 @@
         ]
       }
     },
-    "samples/simple/file/{id}/upload": {
+    "/file/{id}/upload": {
       "post": {
         "tags": [
           "file"
@@ -142,7 +137,7 @@
         }
       }
     },
-    "samples/simple/user/{id}/2": {
+    "/user/{id}/2": {
       "get": {
         "tags": [
           "user"
@@ -257,7 +252,7 @@
         }
       }
     },
-    "samples/simple/user/{id}/abc": {
+    "/user/{id}/abc": {
       "get": {
         "tags": [
           "user"
@@ -282,7 +277,7 @@
         ]
       }
     },
-    "samples/simple/user/{id}": {
+    "/user/{id}": {
       "get": {
         "tags": [
           "user"
@@ -329,7 +324,7 @@
         ]
       }
     },
-    "samples/simple/user/{id}/xyz": {
+    "/user/{id}/xyz": {
       "get": {
         "tags": [
           "user"

@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "strapi api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/strapi/auth/{provider}/callback": {
+    "/auth/{provider}/callback": {
       "get": {
         "tags": [
           "auth"
@@ -44,7 +39,7 @@
         }
       }
     },
-    "samples/strapi/auth/email-confirmation": {
+    "/auth/email-confirmation": {
       "get": {
         "tags": [
           "auth",
@@ -70,7 +65,7 @@
         }
       }
     },
-    "samples/strapi/auth/forgot-password": {
+    "/auth/forgot-password": {
       "post": {
         "tags": [
           "auth",
@@ -110,7 +105,7 @@
         }
       }
     },
-    "samples/strapi/auth/local": {
+    "/auth/local": {
       "post": {
         "tags": [
           "auth",
@@ -150,7 +145,7 @@
         }
       }
     },
-    "samples/strapi/auth/local/register": {
+    "/auth/local/register": {
       "post": {
         "tags": [
           "auth",
@@ -269,7 +264,7 @@
         }
       }
     },
-    "samples/strapi/auth/reset-password": {
+    "/auth/reset-password": {
       "post": {
         "tags": [
           "auth",
@@ -309,7 +304,7 @@
         }
       }
     },
-    "samples/strapi/auth/send-email-confirmation": {
+    "/auth/send-email-confirmation": {
       "post": {
         "tags": [
           "auth",
@@ -349,7 +344,7 @@
         }
       }
     },
-    "samples/strapi/connect/{any}": {
+    "/connect/{any}": {
       "get": {
         "tags": [
           "connect"
@@ -390,7 +385,7 @@
         }
       }
     },
-    "samples/strapi/email": {
+    "/email": {
       "post": {
         "tags": [
           "email"
@@ -429,7 +424,7 @@
         }
       }
     },
-    "samples/strapi/upload/files/{id}": {
+    "/upload/files/{id}": {
       "get": {
         "tags": [
           "upload",
@@ -497,7 +492,7 @@
         }
       }
     },
-    "samples/strapi/upload/files/count": {
+    "/upload/files/count": {
       "get": {
         "tags": [
           "upload",
@@ -524,7 +519,7 @@
         }
       }
     },
-    "samples/strapi/upload/files": {
+    "/upload/files": {
       "get": {
         "tags": [
           "upload",
@@ -550,7 +545,7 @@
         }
       }
     },
-    "samples/strapi/upload": {
+    "/upload": {
       "post": {
         "tags": [
           "upload"
@@ -589,7 +584,7 @@
         }
       }
     },
-    "samples/strapi/upload/search/{id}": {
+    "/upload/search/{id}": {
       "get": {
         "tags": [
           "upload",
@@ -624,7 +619,7 @@
         }
       }
     },
-    "samples/strapi/users/{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
           "users"
@@ -867,7 +862,7 @@
         }
       }
     },
-    "samples/strapi/users": {
+    "/users": {
       "get": {
         "tags": [
           "users"
@@ -1072,7 +1067,7 @@
         }
       }
     },
-    "samples/strapi/users/me": {
+    "/users/me": {
       "get": {
         "tags": [
           "users",
@@ -1151,7 +1146,7 @@
         }
       }
     },
-    "samples/strapi/users-permissions/init": {
+    "/users-permissions/init": {
       "get": {
         "tags": [
           "users-permissions",
@@ -1177,7 +1172,7 @@
         }
       }
     },
-    "samples/strapi/users-permissions/roles/{id}": {
+    "/users-permissions/roles/{id}": {
       "get": {
         "tags": [
           "users-permissions",
@@ -1301,7 +1296,7 @@
         }
       }
     },
-    "samples/strapi/users-permissions/roles/{role}": {
+    "/users-permissions/roles/{role}": {
       "put": {
         "tags": [
           "users-permissions",
@@ -1493,7 +1488,7 @@
         }
       }
     },
-    "samples/strapi/users-permissions/roles": {
+    "/users-permissions/roles": {
       "get": {
         "tags": [
           "users-permissions",
@@ -1883,7 +1878,7 @@
         }
       }
     },
-    "samples/strapi/users-permissions/search/{id}": {
+    "/users-permissions/search/{id}": {
       "get": {
         "tags": [
           "users-permissions",

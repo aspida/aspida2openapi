@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "openapi api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/openapi/api/stream/v1/stories/{storyId}": {
+    "/api/stream/v1/stories/{storyId}": {
       "get": {
         "tags": [
           "api",
@@ -283,7 +278,7 @@
         }
       }
     },
-    "samples/openapi/api/stream/v1/stories": {
+    "/api/stream/v1/stories": {
       "get": {
         "tags": [
           "api",
@@ -315,7 +310,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/me": {
+    "/api/v1/me": {
       "get": {
         "tags": [
           "api",
@@ -366,7 +361,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/mixes/{id}": {
+    "/api/v1/mixes/{id}": {
       "put": {
         "tags": [
           "api",
@@ -405,7 +400,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/mixes/{mixId}/cards": {
+    "/api/v1/mixes/{mixId}/cards": {
       "post": {
         "tags": [
           "api",
@@ -492,7 +487,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/mixes/{mixId}/url": {
+    "/api/v1/mixes/{mixId}/url": {
       "post": {
         "tags": [
           "api",
@@ -534,7 +529,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/mixes": {
+    "/api/v1/mixes": {
       "get": {
         "tags": [
           "api",
@@ -623,7 +618,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/parse/image": {
+    "/api/v1/parse/image": {
       "post": {
         "tags": [
           "api",
@@ -684,7 +679,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/parse": {
+    "/api/v1/parse": {
       "post": {
         "tags": [
           "api",
@@ -767,7 +762,7 @@
         }
       }
     },
-    "samples/openapi/api/v1/token": {
+    "/api/v1/token": {
       "post": {
         "tags": [
           "api",
@@ -822,7 +817,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/2fa": {
+    "/api/v3/2fa": {
       "post": {
         "tags": [
           "api",
@@ -872,7 +867,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/{itemId}": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/items/{itemId}": {
       "post": {
         "tags": [
           "api",
@@ -941,7 +936,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/news-feed": {
+    "/api/v3/channels/{channelId}/news-feed": {
       "get": {
         "tags": [
           "api",
@@ -1278,7 +1273,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}": {
+    "/api/v3/channels/{channelId}/chats/{chatId}": {
       "get": {
         "tags": [
           "api",
@@ -1509,7 +1504,7 @@
         ]
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/audio": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/items/audio": {
       "post": {
         "tags": [
           "api",
@@ -1590,7 +1585,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/image": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/items/image": {
       "post": {
         "tags": [
           "api",
@@ -1668,7 +1663,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/items": {
       "get": {
         "tags": [
           "api",
@@ -1845,7 +1840,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/items/video": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/items/video": {
       "post": {
         "tags": [
           "api",
@@ -1923,7 +1918,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/itemslist": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/itemslist": {
       "get": {
         "tags": [
           "api",
@@ -2176,7 +2171,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/users": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/users": {
       "get": {
         "tags": [
           "api",
@@ -2370,7 +2365,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats/{chatId}/users/remove": {
+    "/api/v3/channels/{channelId}/chats/{chatId}/users/remove": {
       "post": {
         "tags": [
           "api",
@@ -2419,7 +2414,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/chats": {
+    "/api/v3/channels/{channelId}/chats": {
       "get": {
         "tags": [
           "api",
@@ -2778,7 +2773,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}": {
+    "/api/v3/channels/{channelId}": {
       "get": {
         "tags": [
           "api",
@@ -2813,7 +2808,7 @@
         ]
       }
     },
-    "samples/openapi/api/v3/channels/{channelId}/notifications": {
+    "/api/v3/channels/{channelId}/notifications": {
       "get": {
         "tags": [
           "api",
@@ -2922,7 +2917,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/channels": {
+    "/api/v3/channels": {
       "get": {
         "tags": [
           "api",
@@ -3045,7 +3040,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/{chatId}/items/{itemId}": {
+    "/api/v3/chats/{chatId}/items/{itemId}": {
       "post": {
         "tags": [
           "api",
@@ -3345,7 +3340,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/{chatId}/items/audio": {
+    "/api/v3/chats/{chatId}/items/audio": {
       "post": {
         "tags": [
           "api",
@@ -3418,7 +3413,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/{chatId}/items/image": {
+    "/api/v3/chats/{chatId}/items/image": {
       "post": {
         "tags": [
           "api",
@@ -3488,7 +3483,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/{chatId}/items": {
+    "/api/v3/chats/{chatId}/items": {
       "get": {
         "tags": [
           "api",
@@ -3658,7 +3653,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/{chatId}/items/video": {
+    "/api/v3/chats/{chatId}/items/video": {
       "post": {
         "tags": [
           "api",
@@ -3728,7 +3723,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/chats/keys": {
+    "/api/v3/chats/keys": {
       "get": {
         "tags": [
           "api",
@@ -3784,7 +3779,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/audio": {
+    "/api/v3/extension/audio": {
       "post": {
         "tags": [
           "api",
@@ -3833,7 +3828,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/image": {
+    "/api/v3/extension/image": {
       "post": {
         "tags": [
           "api",
@@ -3888,7 +3883,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/parse": {
+    "/api/v3/extension/parse": {
       "post": {
         "tags": [
           "api",
@@ -3961,7 +3956,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/story/{storyId}/audio": {
+    "/api/v3/extension/story/{storyId}/audio": {
       "post": {
         "tags": [
           "api",
@@ -4034,7 +4029,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/story/{storyId}/image": {
+    "/api/v3/extension/story/{storyId}/image": {
       "post": {
         "tags": [
           "api",
@@ -4104,7 +4099,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/story/{storyId}": {
+    "/api/v3/extension/story/{storyId}": {
       "post": {
         "tags": [
           "api",
@@ -4224,7 +4219,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/story/{storyId}/video": {
+    "/api/v3/extension/story/{storyId}/video": {
       "post": {
         "tags": [
           "api",
@@ -4294,7 +4289,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/extension/video": {
+    "/api/v3/extension/video": {
       "post": {
         "tags": [
           "api",
@@ -4349,7 +4344,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/fcm_token": {
+    "/api/v3/fcm_token": {
       "post": {
         "tags": [
           "api",
@@ -4379,7 +4374,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/info": {
+    "/api/v3/info": {
       "get": {
         "tags": [
           "api",
@@ -4413,7 +4408,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/login": {
+    "/api/v3/login": {
       "post": {
         "tags": [
           "api",
@@ -4514,7 +4509,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/logout": {
+    "/api/v3/logout": {
       "post": {
         "tags": [
           "api",
@@ -4541,7 +4536,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/me": {
+    "/api/v3/me": {
       "get": {
         "tags": [
           "api",
@@ -4606,7 +4601,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/organisation": {
+    "/api/v3/organisation": {
       "get": {
         "tags": [
           "api",
@@ -4711,7 +4706,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/organisation/users": {
+    "/api/v3/organisation/users": {
       "get": {
         "tags": [
           "api",
@@ -4797,7 +4792,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/stories/{storyId}/items/{itemId}": {
+    "/api/v3/stories/{storyId}/items/{itemId}": {
       "get": {
         "tags": [
           "api",
@@ -5038,7 +5033,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/stories/{storyId}/items/{itemId}/reaction": {
+    "/api/v3/stories/{storyId}/items/{itemId}/reaction": {
       "post": {
         "tags": [
           "api",
@@ -5171,7 +5166,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/stories/{storyId}/items": {
+    "/api/v3/stories/{storyId}/items": {
       "get": {
         "tags": [
           "api",
@@ -5431,7 +5426,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/user/{userId}": {
+    "/api/v3/user/{userId}": {
       "get": {
         "tags": [
           "api",
@@ -5485,7 +5480,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/user": {
+    "/api/v3/user": {
       "get": {
         "tags": [
           "api",
@@ -5533,7 +5528,7 @@
         }
       }
     },
-    "samples/openapi/api/v3/user/profile": {
+    "/api/v3/user/profile": {
       "put": {
         "tags": [
           "api",

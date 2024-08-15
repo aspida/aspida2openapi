@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "freee api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/freee/api/1/account_items/{id}": {
+    "/api/1/account_items/{id}": {
       "get": {
         "tags": [
           "api",
@@ -514,7 +509,7 @@
         ]
       }
     },
-    "samples/freee/api/1/account_items": {
+    "/api/1/account_items": {
       "get": {
         "tags": [
           "api",
@@ -940,7 +935,7 @@
         }
       }
     },
-    "samples/freee/api/1/banks/{id}": {
+    "/api/1/banks/{id}": {
       "get": {
         "tags": [
           "api",
@@ -1007,7 +1002,7 @@
         }
       }
     },
-    "samples/freee/api/1/banks": {
+    "/api/1/banks": {
       "get": {
         "tags": [
           "api",
@@ -1101,7 +1096,7 @@
         }
       }
     },
-    "samples/freee/api/1/companies/{id}": {
+    "/api/1/companies/{id}": {
       "get": {
         "tags": [
           "api",
@@ -2045,7 +2040,7 @@
         }
       }
     },
-    "samples/freee/api/1/companies": {
+    "/api/1/companies": {
       "get": {
         "tags": [
           "api",
@@ -2121,7 +2116,7 @@
         }
       }
     },
-    "samples/freee/api/1/deals/{id}": {
+    "/api/1/deals/{id}": {
       "get": {
         "tags": [
           "api",
@@ -3220,7 +3215,7 @@
         ]
       }
     },
-    "samples/freee/api/1/deals/{id}/payments/{payment_id}": {
+    "/api/1/deals/{id}/payments/{payment_id}": {
       "put": {
         "tags": [
           "api",
@@ -3768,7 +3763,7 @@
         ]
       }
     },
-    "samples/freee/api/1/deals/{id}/payments": {
+    "/api/1/deals/{id}/payments": {
       "post": {
         "tags": [
           "api",
@@ -4274,7 +4269,7 @@
         }
       }
     },
-    "samples/freee/api/1/deals/{id}/renews/{renew_id}": {
+    "/api/1/deals/{id}/renews/{renew_id}": {
       "put": {
         "tags": [
           "api",
@@ -5305,7 +5300,7 @@
         }
       }
     },
-    "samples/freee/api/1/deals/{id}/renews": {
+    "/api/1/deals/{id}/renews": {
       "post": {
         "tags": [
           "api",
@@ -5857,7 +5852,7 @@
         }
       }
     },
-    "samples/freee/api/1/deals": {
+    "/api/1/deals": {
       "get": {
         "tags": [
           "api",
@@ -6867,7 +6862,7 @@
         }
       }
     },
-    "samples/freee/api/1/expense_application_line_templates/{id}": {
+    "/api/1/expense_application_line_templates/{id}": {
       "get": {
         "tags": [
           "api",
@@ -7101,7 +7096,7 @@
         ]
       }
     },
-    "samples/freee/api/1/expense_application_line_templates": {
+    "/api/1/expense_application_line_templates": {
       "get": {
         "tags": [
           "api",
@@ -7313,7 +7308,7 @@
         }
       }
     },
-    "samples/freee/api/1/expense_applications/{id}": {
+    "/api/1/expense_applications/{id}": {
       "get": {
         "tags": [
           "api",
@@ -7757,7 +7752,7 @@
         ]
       }
     },
-    "samples/freee/api/1/expense_applications": {
+    "/api/1/expense_applications": {
       "get": {
         "tags": [
           "api",
@@ -8175,7 +8170,7 @@
         }
       }
     },
-    "samples/freee/api/1/forms/selectables": {
+    "/api/1/forms/selectables": {
       "get": {
         "tags": [
           "api",
@@ -8373,7 +8368,7 @@
         }
       }
     },
-    "samples/freee/api/1/invoices/{id}": {
+    "/api/1/invoices/{id}": {
       "get": {
         "tags": [
           "api",
@@ -9833,7 +9828,7 @@
         ]
       }
     },
-    "samples/freee/api/1/invoices": {
+    "/api/1/invoices": {
       "get": {
         "tags": [
           "api",
@@ -11370,7 +11365,7 @@
         }
       }
     },
-    "samples/freee/api/1/items/{id}": {
+    "/api/1/items/{id}": {
       "get": {
         "tags": [
           "api",
@@ -11577,7 +11572,7 @@
         ]
       }
     },
-    "samples/freee/api/1/items": {
+    "/api/1/items": {
       "get": {
         "tags": [
           "api",
@@ -11744,7 +11739,7 @@
         }
       }
     },
-    "samples/freee/api/1/journals": {
+    "/api/1/journals": {
       "get": {
         "tags": [
           "api",
@@ -11891,7 +11886,7 @@
         }
       }
     },
-    "samples/freee/api/1/journals/reports/{id}/download": {
+    "/api/1/journals/reports/{id}/download": {
       "get": {
         "tags": [
           "api",
@@ -11931,7 +11926,7 @@
         }
       }
     },
-    "samples/freee/api/1/journals/reports/{id}/status": {
+    "/api/1/journals/reports/{id}/status": {
       "get": {
         "tags": [
           "api",
@@ -12083,7 +12078,7 @@
         }
       }
     },
-    "samples/freee/api/1/manual_journals/{id}": {
+    "/api/1/manual_journals/{id}": {
       "get": {
         "tags": [
           "api",
@@ -12670,7 +12665,7 @@
         ]
       }
     },
-    "samples/freee/api/1/manual_journals": {
+    "/api/1/manual_journals": {
       "get": {
         "tags": [
           "api",
@@ -13401,7 +13396,7 @@
         }
       }
     },
-    "samples/freee/api/1/partners/{id}": {
+    "/api/1/partners/{id}": {
       "get": {
         "tags": [
           "api",
@@ -14219,7 +14214,7 @@
         ]
       }
     },
-    "samples/freee/api/1/partners/code/{code}": {
+    "/api/1/partners/code/{code}": {
       "put": {
         "tags": [
           "api",
@@ -14705,7 +14700,7 @@
         }
       }
     },
-    "samples/freee/api/1/partners": {
+    "/api/1/partners": {
       "get": {
         "tags": [
           "api",
@@ -15472,7 +15467,7 @@
         }
       }
     },
-    "samples/freee/api/1/quotations/{id}": {
+    "/api/1/quotations/{id}": {
       "get": {
         "tags": [
           "api",
@@ -16772,7 +16767,7 @@
         ]
       }
     },
-    "samples/freee/api/1/quotations": {
+    "/api/1/quotations": {
       "get": {
         "tags": [
           "api",
@@ -18114,7 +18109,7 @@
         }
       }
     },
-    "samples/freee/api/1/receipts/{id}": {
+    "/api/1/receipts/{id}": {
       "get": {
         "tags": [
           "api",
@@ -18421,7 +18416,7 @@
         ]
       }
     },
-    "samples/freee/api/1/receipts": {
+    "/api/1/receipts": {
       "get": {
         "tags": [
           "api",
@@ -18784,7 +18779,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_bs": {
+    "/api/1/reports/trial_bs": {
       "get": {
         "tags": [
           "api",
@@ -19152,7 +19147,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_bs_three_years": {
+    "/api/1/reports/trial_bs_three_years": {
       "get": {
         "tags": [
           "api",
@@ -19508,7 +19503,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_bs_two_years": {
+    "/api/1/reports/trial_bs_two_years": {
       "get": {
         "tags": [
           "api",
@@ -19852,7 +19847,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_pl": {
+    "/api/1/reports/trial_pl": {
       "get": {
         "tags": [
           "api",
@@ -20296,7 +20291,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_pl_sections": {
+    "/api/1/reports/trial_pl_sections": {
       "get": {
         "tags": [
           "api",
@@ -20676,7 +20671,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_pl_three_years": {
+    "/api/1/reports/trial_pl_three_years": {
       "get": {
         "tags": [
           "api",
@@ -21104,7 +21099,7 @@
         }
       }
     },
-    "samples/freee/api/1/reports/trial_pl_two_years": {
+    "/api/1/reports/trial_pl_two_years": {
       "get": {
         "tags": [
           "api",
@@ -21516,7 +21511,7 @@
         }
       }
     },
-    "samples/freee/api/1/sections/{id}": {
+    "/api/1/sections/{id}": {
       "get": {
         "tags": [
           "api",
@@ -21745,7 +21740,7 @@
         ]
       }
     },
-    "samples/freee/api/1/sections": {
+    "/api/1/sections": {
       "get": {
         "tags": [
           "api",
@@ -21934,7 +21929,7 @@
         }
       }
     },
-    "samples/freee/api/1/segments/{segment_id}/tags/{id}": {
+    "/api/1/segments/{segment_id}/tags/{id}": {
       "put": {
         "tags": [
           "api",
@@ -22088,7 +22083,7 @@
         ]
       }
     },
-    "samples/freee/api/1/segments/{segment_id}/tags": {
+    "/api/1/segments/{segment_id}/tags": {
       "get": {
         "tags": [
           "api",
@@ -22304,7 +22299,7 @@
         }
       }
     },
-    "samples/freee/api/1/tags/{id}": {
+    "/api/1/tags/{id}": {
       "get": {
         "tags": [
           "api",
@@ -22517,7 +22512,7 @@
         ]
       }
     },
-    "samples/freee/api/1/tags": {
+    "/api/1/tags": {
       "get": {
         "tags": [
           "api",
@@ -22690,7 +22685,7 @@
         }
       }
     },
-    "samples/freee/api/1/taxes/codes/{code}": {
+    "/api/1/taxes/codes/{code}": {
       "get": {
         "tags": [
           "api",
@@ -22748,7 +22743,7 @@
         }
       }
     },
-    "samples/freee/api/1/taxes/codes": {
+    "/api/1/taxes/codes": {
       "get": {
         "tags": [
           "api",
@@ -22800,7 +22795,7 @@
         }
       }
     },
-    "samples/freee/api/1/taxes/companies/{company_id}": {
+    "/api/1/taxes/companies/{company_id}": {
       "get": {
         "tags": [
           "api",
@@ -22884,7 +22879,7 @@
         }
       }
     },
-    "samples/freee/api/1/transfers/{id}": {
+    "/api/1/transfers/{id}": {
       "get": {
         "tags": [
           "api",
@@ -23202,7 +23197,7 @@
         ]
       }
     },
-    "samples/freee/api/1/transfers": {
+    "/api/1/transfers": {
       "get": {
         "tags": [
           "api",
@@ -23516,7 +23511,7 @@
         }
       }
     },
-    "samples/freee/api/1/users/capabilities": {
+    "/api/1/users/capabilities": {
       "get": {
         "tags": [
           "api",
@@ -24872,7 +24867,7 @@
         }
       }
     },
-    "samples/freee/api/1/users": {
+    "/api/1/users": {
       "get": {
         "tags": [
           "api",
@@ -24972,7 +24967,7 @@
         }
       }
     },
-    "samples/freee/api/1/users/me": {
+    "/api/1/users/me": {
       "get": {
         "tags": [
           "api",
@@ -25204,7 +25199,7 @@
         }
       }
     },
-    "samples/freee/api/1/wallet_txns/{id}": {
+    "/api/1/wallet_txns/{id}": {
       "get": {
         "tags": [
           "api",
@@ -25345,7 +25340,7 @@
         ]
       }
     },
-    "samples/freee/api/1/wallet_txns": {
+    "/api/1/wallet_txns": {
       "get": {
         "tags": [
           "api",
@@ -25683,7 +25678,7 @@
         }
       }
     },
-    "samples/freee/api/1/walletables/{type}/{id}": {
+    "/api/1/walletables/{type}/{id}": {
       "get": {
         "tags": [
           "api",
@@ -25947,7 +25942,7 @@
         ]
       }
     },
-    "samples/freee/api/1/walletables": {
+    "/api/1/walletables": {
       "get": {
         "tags": [
           "api",

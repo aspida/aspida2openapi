@@ -1,16 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "aspida to OpenAPI",
+    "title": "swagger api",
     "version": "v0.0"
   },
-  "servers": [
-    {
-      "url": "/api"
-    }
-  ],
   "paths": {
-    "samples/swagger/hello": {
+    "/hello": {
       "get": {
         "tags": [
           "hello"
@@ -40,7 +35,7 @@
         }
       }
     },
-    "samples/swagger/pet/{petId}": {
+    "/pet/{petId}": {
       "get": {
         "tags": [
           "pet"
@@ -170,7 +165,7 @@
         ]
       }
     },
-    "samples/swagger/pet/{petId}/uploadImage": {
+    "/pet/{petId}/uploadImage": {
       "post": {
         "tags": [
           "pet"
@@ -229,7 +224,7 @@
         }
       }
     },
-    "samples/swagger/pet/findByStatus": {
+    "/pet/findByStatus": {
       "get": {
         "tags": [
           "pet",
@@ -323,7 +318,7 @@
         }
       }
     },
-    "samples/swagger/pet": {
+    "/pet": {
       "post": {
         "tags": [
           "pet"
@@ -461,7 +456,7 @@
         }
       }
     },
-    "samples/swagger/store/inventory": {
+    "/store/inventory": {
       "get": {
         "tags": [
           "store",
@@ -485,7 +480,7 @@
         }
       }
     },
-    "samples/swagger/store/order/{orderId}": {
+    "/store/order/{orderId}": {
       "get": {
         "tags": [
           "store",
@@ -557,7 +552,7 @@
         ]
       }
     },
-    "samples/swagger/store/order": {
+    "/store/order": {
       "post": {
         "tags": [
           "store",
@@ -640,7 +635,7 @@
         }
       }
     },
-    "samples/swagger/user/{username}": {
+    "/user/{username}": {
       "get": {
         "tags": [
           "user"
@@ -763,7 +758,7 @@
         ]
       }
     },
-    "samples/swagger/user/createWithArray": {
+    "/user/createWithArray": {
       "post": {
         "tags": [
           "user",
@@ -812,7 +807,7 @@
         }
       }
     },
-    "samples/swagger/user/createWithList": {
+    "/user/createWithList": {
       "post": {
         "tags": [
           "user",
@@ -861,7 +856,7 @@
         }
       }
     },
-    "samples/swagger/user": {
+    "/user": {
       "post": {
         "tags": [
           "user"
@@ -906,7 +901,7 @@
         }
       }
     },
-    "samples/swagger/user/login": {
+    "/user/login": {
       "get": {
         "tags": [
           "user",

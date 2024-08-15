@@ -44,8 +44,11 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
     const schema = TJS.generateSchema(program, 'AllMethods', { required: true });
     const doc: OpenAPIV3_1.Document = {
       openapi: '3.1.0',
-      info: { title: 'aspida to OpenAPI', version: 'v0.0' },
-      servers: [{ url: '/api' }],
+      info: {
+        title: `${config.output.split('/').at(-1)?.replace('.json', '')} api`,
+        version: 'v0.0',
+      },
+      servers: config.baseURL ? [{ url: config.baseURL }] : undefined,
       paths: {},
       components: { schemas: schema?.definitions as any },
     };
@@ -75,6 +78,8 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
 
         path = path.replace(/\/_([^/@]+)(@[^/]+)?/g, '/{$1}');
       }
+
+      path = path.replace(config.input, '');
 
       doc.paths![path] = Object.entries(def.properties!).reduce((dict, [method, val]) => {
         const params = [...parameters];
