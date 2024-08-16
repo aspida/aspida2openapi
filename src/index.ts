@@ -9,7 +9,7 @@ import type { PartialConfig } from './getConfig';
 import { getConfig } from './getConfig';
 
 export default (configs?: PartialConfig) =>
-  getConfig(configs).map((config) => {
+  getConfig(configs).forEach((config) => {
     const tree = getDirentTree(config.input);
 
     const createFilePaths = (tree: DirentTree): string[] => {
