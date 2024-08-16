@@ -1,7 +1,7 @@
 import type { AspidaConfig } from 'aspida/dist/cjs/commands';
 import { getConfigs } from 'aspida/dist/cjs/commands';
 
-export type Config = { input: string; baseURL: string; output: string };
+export type Config = { input: string; baseURL?: string; output: string };
 
 export type ConfigFile = AspidaConfig & { openapi?: { outputFile?: string } };
 
