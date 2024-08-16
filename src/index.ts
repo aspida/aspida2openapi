@@ -84,7 +84,7 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
         path = path.replace(/\/_([^/@]+)(@[^/]+)?/g, '/{$1}');
       }
 
-      path = path.replace(config.input, '');
+      path = path.replace(config.input, '') || '/';
 
       doc.paths![path] = Object.entries(def.properties!).reduce((dict, [method, val]) => {
         const params = [...parameters];
@@ -122,7 +122,7 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
         return {
           ...dict,
           [method]: {
-            tags: path.replace(config.input, '').split('/{')[0].replace(/^\//, '').split('/'),
+            tags: path === '/' ? undefined : path.split('/{')[0].replace(/^\//, '').split('/'),
             parameters: params,
             requestBody:
               props.reqBody === undefined
