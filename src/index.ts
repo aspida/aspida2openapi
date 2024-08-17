@@ -153,4 +153,5 @@ export default (configs?: PartialConfig) =>
     };
 
     writeFileSync(config.output, toOpenAPI({ input: config.input, template }), 'utf8');
+    console.log(`${config.output} was built successfully.`);
   });
