@@ -1,8 +1,8 @@
 import { getConfigs } from 'aspida/dist/cjs/getConfigs';
+import watchInputDir from 'aspida/dist/cjs/watchInputDir';
 import minimist from 'minimist';
 import build from '.';
 import type { ConfigFile, PartialConfig } from './getConfig';
-import { watchIndexFiles } from './watchIndexFiles';
 
 export const run = (args: string[]) => {
   const argv: Record<string, string | undefined> = minimist(args, {
@@ -21,7 +21,7 @@ export const run = (args: string[]) => {
     build(configs);
 
     if (argv.watch !== undefined) {
-      configs.forEach((config) => watchIndexFiles(config.input, () => build(config)));
+      configs.forEach((config) => watchInputDir(config.input, () => build(config)));
     }
 
     return;
@@ -38,5 +38,5 @@ export const run = (args: string[]) => {
 
   build(option);
 
-  if (argv.watch !== undefined) watchIndexFiles(config.input, () => build(option));
+  if (argv.watch !== undefined) watchInputDir(config.input, () => build(option));
 };
