@@ -39,6 +39,10 @@ can change openapi file name
 
 path to an aspida config file
 
+### `-w`, `--watch`
+
+enable watch mode
+
 ### `--version`
 
 display version
