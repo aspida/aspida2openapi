@@ -7,9 +7,6 @@
   "paths": {
     "/auth/{provider}/callback": {
       "get": {
-        "tags": [
-          "auth"
-        ],
         "parameters": [
           {
             "name": "provider",
@@ -41,11 +38,6 @@
     },
     "/auth/email-confirmation": {
       "get": {
-        "tags": [
-          "auth",
-          "email-confirmation"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -67,11 +59,6 @@
     },
     "/auth/forgot-password": {
       "post": {
-        "tags": [
-          "auth",
-          "forgot-password"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -107,11 +94,6 @@
     },
     "/auth/local": {
       "post": {
-        "tags": [
-          "auth",
-          "local"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -147,12 +129,6 @@
     },
     "/auth/local/register": {
       "post": {
-        "tags": [
-          "auth",
-          "local",
-          "register"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -266,11 +242,6 @@
     },
     "/auth/reset-password": {
       "post": {
-        "tags": [
-          "auth",
-          "reset-password"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -306,11 +277,6 @@
     },
     "/auth/send-email-confirmation": {
       "post": {
-        "tags": [
-          "auth",
-          "send-email-confirmation"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -346,9 +312,6 @@
     },
     "/connect/{any}": {
       "get": {
-        "tags": [
-          "connect"
-        ],
         "parameters": [
           {
             "name": "any",
@@ -387,10 +350,6 @@
     },
     "/email": {
       "post": {
-        "tags": [
-          "email"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -426,10 +385,6 @@
     },
     "/upload/files/{id}": {
       "get": {
-        "tags": [
-          "upload",
-          "files"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -459,10 +414,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "upload",
-          "files"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -494,12 +445,6 @@
     },
     "/upload/files/count": {
       "get": {
-        "tags": [
-          "upload",
-          "files",
-          "count"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -521,11 +466,6 @@
     },
     "/upload/files": {
       "get": {
-        "tags": [
-          "upload",
-          "files"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -547,10 +487,6 @@
     },
     "/upload": {
       "post": {
-        "tags": [
-          "upload"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -586,10 +522,6 @@
     },
     "/upload/search/{id}": {
       "get": {
-        "tags": [
-          "upload",
-          "search"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -621,9 +553,6 @@
     },
     "/users/{id}": {
       "get": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -706,9 +635,6 @@
         }
       },
       "put": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -830,9 +756,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -864,9 +787,6 @@
     },
     "/users": {
       "get": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1069,11 +989,6 @@
     },
     "/users/me": {
       "get": {
-        "tags": [
-          "users",
-          "me"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -1148,11 +1063,6 @@
     },
     "/users-permissions/init": {
       "get": {
-        "tags": [
-          "users-permissions",
-          "init"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -1174,10 +1084,6 @@
     },
     "/users-permissions/roles/{id}": {
       "get": {
-        "tags": [
-          "users-permissions",
-          "roles"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -1298,10 +1204,6 @@
     },
     "/users-permissions/roles/{role}": {
       "put": {
-        "tags": [
-          "users-permissions",
-          "roles"
-        ],
         "parameters": [
           {
             "name": "role",
@@ -1455,10 +1357,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "users-permissions",
-          "roles"
-        ],
         "parameters": [
           {
             "name": "role",
@@ -1490,10 +1388,6 @@
     },
     "/users-permissions/roles": {
       "get": {
-        "tags": [
-          "users-permissions",
-          "roles"
-        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1730,11 +1624,6 @@
         }
       },
       "post": {
-        "tags": [
-          "users-permissions",
-          "roles"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1880,10 +1769,6 @@
     },
     "/users-permissions/search/{id}": {
       "get": {
-        "tags": [
-          "users-permissions",
-          "search"
-        ],
         "parameters": [
           {
             "name": "id",

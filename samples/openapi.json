@@ -7,12 +7,6 @@
   "paths": {
     "/api/stream/v1/stories/{storyId}": {
       "get": {
-        "tags": [
-          "api",
-          "stream",
-          "v1",
-          "stories"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -280,12 +274,6 @@
     },
     "/api/stream/v1/stories": {
       "get": {
-        "tags": [
-          "api",
-          "stream",
-          "v1",
-          "stories"
-        ],
         "parameters": [
           {
             "name": "token",
@@ -312,12 +300,6 @@
     },
     "/api/v1/me": {
       "get": {
-        "tags": [
-          "api",
-          "v1",
-          "me"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -363,11 +345,6 @@
     },
     "/api/v1/mixes/{id}": {
       "put": {
-        "tags": [
-          "api",
-          "v1",
-          "mixes"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -402,11 +379,6 @@
     },
     "/api/v1/mixes/{mixId}/cards": {
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "mixes"
-        ],
         "parameters": [
           {
             "name": "mixId",
@@ -489,11 +461,6 @@
     },
     "/api/v1/mixes/{mixId}/url": {
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "mixes"
-        ],
         "parameters": [
           {
             "name": "mixId",
@@ -531,12 +498,6 @@
     },
     "/api/v1/mixes": {
       "get": {
-        "tags": [
-          "api",
-          "v1",
-          "mixes"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -570,12 +531,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "mixes"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -620,13 +575,6 @@
     },
     "/api/v1/parse/image": {
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "parse",
-          "image"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -681,12 +629,6 @@
     },
     "/api/v1/parse": {
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "parse"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -764,12 +706,6 @@
     },
     "/api/v1/token": {
       "post": {
-        "tags": [
-          "api",
-          "v1",
-          "token"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -819,12 +755,6 @@
     },
     "/api/v3/2fa": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "2fa"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -869,11 +799,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/items/{itemId}": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -938,11 +863,6 @@
     },
     "/api/v3/channels/{channelId}/news-feed": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1275,11 +1195,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1416,11 +1331,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1479,11 +1389,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1506,11 +1411,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/items/audio": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1587,11 +1487,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/items/image": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1665,11 +1560,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/items": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1722,11 +1612,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1842,11 +1727,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/items/video": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -1920,11 +1800,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/itemslist": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2173,11 +2048,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/users": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2242,11 +2112,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2296,11 +2161,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2367,11 +2227,6 @@
     },
     "/api/v3/channels/{channelId}/chats/{chatId}/users/remove": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2416,11 +2271,6 @@
     },
     "/api/v3/channels/{channelId}/chats": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2584,11 +2434,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2775,11 +2620,6 @@
     },
     "/api/v3/channels/{channelId}": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2810,11 +2650,6 @@
     },
     "/api/v3/channels/{channelId}/notifications": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "channelId",
@@ -2919,11 +2754,6 @@
     },
     "/api/v3/channels": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "channels"
-        ],
         "parameters": [
           {
             "name": "unpublished",
@@ -3042,11 +2872,6 @@
     },
     "/api/v3/chats/{chatId}/items/{itemId}": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3101,11 +2926,6 @@
         }
       },
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3342,11 +3162,6 @@
     },
     "/api/v3/chats/{chatId}/items/audio": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3415,11 +3230,6 @@
     },
     "/api/v3/chats/{chatId}/items/image": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3485,11 +3295,6 @@
     },
     "/api/v3/chats/{chatId}/items": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3543,11 +3348,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3655,11 +3455,6 @@
     },
     "/api/v3/chats/{chatId}/items/video": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "chats"
-        ],
         "parameters": [
           {
             "name": "chatId",
@@ -3725,13 +3520,6 @@
     },
     "/api/v3/chats/keys": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "chats",
-          "keys"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -3781,13 +3569,6 @@
     },
     "/api/v3/extension/audio": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "audio"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3830,13 +3611,6 @@
     },
     "/api/v3/extension/image": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "image"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3885,13 +3659,6 @@
     },
     "/api/v3/extension/parse": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "parse"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3958,12 +3725,6 @@
     },
     "/api/v3/extension/story/{storyId}/audio": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "story"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -4031,12 +3792,6 @@
     },
     "/api/v3/extension/story/{storyId}/image": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "story"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -4101,12 +3856,6 @@
     },
     "/api/v3/extension/story/{storyId}": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "story"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -4221,12 +3970,6 @@
     },
     "/api/v3/extension/story/{storyId}/video": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "story"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -4291,13 +4034,6 @@
     },
     "/api/v3/extension/video": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "extension",
-          "video"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -4346,12 +4082,6 @@
     },
     "/api/v3/fcm_token": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "fcm_token"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4376,12 +4106,6 @@
     },
     "/api/v3/info": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "info"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -4410,12 +4134,6 @@
     },
     "/api/v3/login": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "login"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4511,12 +4229,6 @@
     },
     "/api/v3/logout": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "logout"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4538,12 +4250,6 @@
     },
     "/api/v3/me": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "me"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -4603,12 +4309,6 @@
     },
     "/api/v3/organisation": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "organisation"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -4708,12 +4408,6 @@
     },
     "/api/v3/organisation/users": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "organisation",
-          "users"
-        ],
         "parameters": [
           {
             "name": "search",
@@ -4794,11 +4488,6 @@
     },
     "/api/v3/stories/{storyId}/items/{itemId}": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "stories"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -5035,11 +4724,6 @@
     },
     "/api/v3/stories/{storyId}/items/{itemId}/reaction": {
       "post": {
-        "tags": [
-          "api",
-          "v3",
-          "stories"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -5168,11 +4852,6 @@
     },
     "/api/v3/stories/{storyId}/items": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "stories"
-        ],
         "parameters": [
           {
             "name": "storyId",
@@ -5428,11 +5107,6 @@
     },
     "/api/v3/user/{userId}": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "user"
-        ],
         "parameters": [
           {
             "name": "userId",
@@ -5482,12 +5156,6 @@
     },
     "/api/v3/user": {
       "get": {
-        "tags": [
-          "api",
-          "v3",
-          "user"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -5530,13 +5198,6 @@
     },
     "/api/v3/user/profile": {
       "put": {
-        "tags": [
-          "api",
-          "v3",
-          "user",
-          "profile"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {

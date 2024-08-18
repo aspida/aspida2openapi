@@ -7,10 +7,6 @@
   "paths": {
     "/user": {
       "get": {
-        "tags": [
-          "user"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {

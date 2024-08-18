@@ -6,19 +6,10 @@
   },
   "paths": {
     "/dummy/2": {
-      "put": {
-        "tags": [
-          "dummy",
-          "2"
-        ],
-        "parameters": []
-      }
+      "put": {}
     },
     "/dummy/{a_1}/simple": {
       "put": {
-        "tags": [
-          "dummy"
-        ],
         "parameters": [
           {
             "name": "a_1",
@@ -33,9 +24,6 @@
     },
     "/dummy/{id}/content": {
       "put": {
-        "tags": [
-          "dummy"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -62,9 +50,6 @@
     },
     "/dummy/{id}/query": {
       "put": {
-        "tags": [
-          "dummy"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -88,9 +73,6 @@
     },
     "/dummy/{id}/simple": {
       "put": {
-        "tags": [
-          "dummy"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -105,9 +87,6 @@
     },
     "/file/{id}/upload": {
       "post": {
-        "tags": [
-          "file"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -139,9 +118,6 @@
     },
     "/user/{id}/2": {
       "get": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -196,9 +172,6 @@
         }
       },
       "post": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -254,9 +227,6 @@
     },
     "/user/{id}/abc": {
       "get": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -279,9 +249,6 @@
     },
     "/user/{id}": {
       "get": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -294,9 +261,6 @@
         ]
       },
       "patch": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -309,9 +273,6 @@
         ]
       },
       "delete": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -326,9 +287,6 @@
     },
     "/user/{id}/xyz": {
       "get": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -341,9 +299,6 @@
         ]
       },
       "put": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "id",

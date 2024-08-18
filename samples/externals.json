@@ -7,9 +7,6 @@
   "paths": {
     "/users/{user_id}/orders/{order_id}": {
       "get": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -102,9 +99,6 @@
     },
     "/users/{user_id}/orders": {
       "get": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -202,9 +196,6 @@
     },
     "/users/{user_id}/orders/purchase/invoice": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -312,9 +303,6 @@
     },
     "/users/{user_id}/orders/purchase/wallet": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -426,9 +414,6 @@
     },
     "/users/{user_id}/orders/unsubscribe": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -532,9 +517,6 @@
     },
     "/users/{user_id}/orders/update/renew": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -643,9 +625,6 @@
     },
     "/users/{user_id}/phone-numbers/{phone_number}/orders": {
       "get": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -742,9 +721,6 @@
     },
     "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/invoice": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",
@@ -856,9 +832,6 @@
     },
     "/users/{user_id}/phone-numbers/{phone_number}/orders/purchase/wallet": {
       "post": {
-        "tags": [
-          "users"
-        ],
         "parameters": [
           {
             "name": "user_id",

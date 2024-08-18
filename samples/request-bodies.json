@@ -7,10 +7,6 @@
   "paths": {
     "/users": {
       "post": {
-        "tags": [
-          "users"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {

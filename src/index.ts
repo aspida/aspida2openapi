@@ -113,8 +113,7 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
       return {
         ...dict,
         [method]: {
-          tags: path === '/' ? undefined : path.split('/{')[0].replace(/^\//, '').split('/'),
-          parameters: params,
+          parameters: params.length === 0 ? undefined : params,
           requestBody:
             props.reqBody === undefined
               ? undefined

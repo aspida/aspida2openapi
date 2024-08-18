@@ -7,10 +7,6 @@
   "paths": {
     "/ping": {
       "get": {
-        "tags": [
-          "ping"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {

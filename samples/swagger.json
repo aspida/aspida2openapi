@@ -7,9 +7,6 @@
   "paths": {
     "/hello": {
       "get": {
-        "tags": [
-          "hello"
-        ],
         "parameters": [
           {
             "name": "name",
@@ -37,9 +34,6 @@
     },
     "/pet/{petId}": {
       "get": {
-        "tags": [
-          "pet"
-        ],
         "parameters": [
           {
             "name": "petId",
@@ -116,9 +110,6 @@
         }
       },
       "post": {
-        "tags": [
-          "pet"
-        ],
         "parameters": [
           {
             "name": "petId",
@@ -150,9 +141,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "pet"
-        ],
         "parameters": [
           {
             "name": "petId",
@@ -167,9 +155,6 @@
     },
     "/pet/{petId}/uploadImage": {
       "post": {
-        "tags": [
-          "pet"
-        ],
         "parameters": [
           {
             "name": "petId",
@@ -226,10 +211,6 @@
     },
     "/pet/findByStatus": {
       "get": {
-        "tags": [
-          "pet",
-          "findByStatus"
-        ],
         "parameters": [
           {
             "name": "status",
@@ -320,10 +301,6 @@
     },
     "/pet": {
       "post": {
-        "tags": [
-          "pet"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -388,10 +365,6 @@
         }
       },
       "put": {
-        "tags": [
-          "pet"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -458,11 +431,6 @@
     },
     "/store/inventory": {
       "get": {
-        "tags": [
-          "store",
-          "inventory"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -482,10 +450,6 @@
     },
     "/store/order/{orderId}": {
       "get": {
-        "tags": [
-          "store",
-          "order"
-        ],
         "parameters": [
           {
             "name": "orderId",
@@ -536,10 +500,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "store",
-          "order"
-        ],
         "parameters": [
           {
             "name": "orderId",
@@ -554,11 +514,6 @@
     },
     "/store/order": {
       "post": {
-        "tags": [
-          "store",
-          "order"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -637,9 +592,6 @@
     },
     "/user/{username}": {
       "get": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "username",
@@ -691,9 +643,6 @@
         }
       },
       "put": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "username",
@@ -743,9 +692,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "user"
-        ],
         "parameters": [
           {
             "name": "username",
@@ -760,11 +706,6 @@
     },
     "/user/createWithArray": {
       "post": {
-        "tags": [
-          "user",
-          "createWithArray"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -809,11 +750,6 @@
     },
     "/user/createWithList": {
       "post": {
-        "tags": [
-          "user",
-          "createWithList"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -858,10 +794,6 @@
     },
     "/user": {
       "post": {
-        "tags": [
-          "user"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -903,10 +835,6 @@
     },
     "/user/login": {
       "get": {
-        "tags": [
-          "user",
-          "login"
-        ],
         "parameters": [
           {
             "name": "username",

@@ -7,11 +7,6 @@
   "paths": {
     "/api/1/account_items/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "account_items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -201,11 +196,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "account_items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -483,11 +473,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "account_items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -511,11 +496,6 @@
     },
     "/api/1/account_items": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "account_items"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -662,12 +642,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "account_items"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -937,11 +911,6 @@
     },
     "/api/1/banks/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "banks"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -1004,11 +973,6 @@
     },
     "/api/1/banks": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "banks"
-        ],
         "parameters": [
           {
             "name": "offset",
@@ -1098,11 +1062,6 @@
     },
     "/api/1/companies/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "companies"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -1469,11 +1428,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "companies"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -2042,12 +1996,6 @@
     },
     "/api/1/companies": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "companies"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -2118,11 +2066,6 @@
     },
     "/api/1/deals/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -2599,11 +2542,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -3189,11 +3127,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -3217,11 +3150,6 @@
     },
     "/api/1/deals/{id}/payments/{payment_id}": {
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -3729,11 +3657,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -3765,11 +3688,6 @@
     },
     "/api/1/deals/{id}/payments": {
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -4271,11 +4189,6 @@
     },
     "/api/1/deals/{id}/renews/{renew_id}": {
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -4824,11 +4737,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -5302,11 +5210,6 @@
     },
     "/api/1/deals/{id}/renews": {
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -5854,11 +5757,6 @@
     },
     "/api/1/deals": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -6478,12 +6376,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "deals"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -6864,11 +6756,6 @@
     },
     "/api/1/expense_application_line_templates/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "expense_application_line_templates"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -6949,11 +6836,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "expense_application_line_templates"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -7070,11 +6952,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "expense_application_line_templates"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -7098,11 +6975,6 @@
     },
     "/api/1/expense_application_line_templates": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "expense_application_line_templates"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -7196,12 +7068,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "expense_application_line_templates"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -7310,11 +7176,6 @@
     },
     "/api/1/expense_applications/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "expense_applications"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -7482,11 +7343,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "expense_applications"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -7726,11 +7582,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "expense_applications"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -7754,11 +7605,6 @@
     },
     "/api/1/expense_applications": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "expense_applications"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -7939,12 +7785,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "expense_applications"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -8172,12 +8012,6 @@
     },
     "/api/1/forms/selectables": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "forms",
-          "selectables"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -8370,11 +8204,6 @@
     },
     "/api/1/invoices/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "invoices"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -8953,11 +8782,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "invoices"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -9802,11 +9626,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "invoices"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -9830,11 +9649,6 @@
     },
     "/api/1/invoices": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "invoices"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -10529,12 +10343,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "invoices"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -11367,11 +11175,6 @@
     },
     "/api/1/items/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -11445,11 +11248,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -11546,11 +11344,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "items"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -11574,11 +11367,6 @@
     },
     "/api/1/items": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "items"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -11647,12 +11435,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "items"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -11741,11 +11523,6 @@
     },
     "/api/1/journals": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "journals"
-        ],
         "parameters": [
           {
             "name": "download_type",
@@ -11888,12 +11665,6 @@
     },
     "/api/1/journals/reports/{id}/download": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "journals",
-          "reports"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -11928,12 +11699,6 @@
     },
     "/api/1/journals/reports/{id}/status": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "journals",
-          "reports"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -12080,11 +11845,6 @@
     },
     "/api/1/manual_journals/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "manual_journals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -12309,11 +12069,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "manual_journals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -12639,11 +12394,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "manual_journals"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -12667,11 +12417,6 @@
     },
     "/api/1/manual_journals": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "manual_journals"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -13079,12 +12824,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "manual_journals"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -13398,11 +13137,6 @@
     },
     "/api/1/partners/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "partners"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -13705,11 +13439,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "partners"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -14188,11 +13917,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "partners"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -14216,12 +13940,6 @@
     },
     "/api/1/partners/code/{code}": {
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "partners",
-          "code"
-        ],
         "parameters": [
           {
             "name": "code",
@@ -14702,11 +14420,6 @@
     },
     "/api/1/partners": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "partners"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -14989,12 +14702,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "partners"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -15469,11 +15176,6 @@
     },
     "/api/1/quotations/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "quotations"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -15989,11 +15691,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "quotations"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -16741,11 +16438,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "quotations"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -16769,11 +16461,6 @@
     },
     "/api/1/quotations": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "quotations"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -17370,12 +17057,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "quotations"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -18111,11 +17792,6 @@
     },
     "/api/1/receipts/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "receipts"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -18241,11 +17917,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "receipts"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -18390,11 +18061,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "receipts"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -18418,11 +18084,6 @@
     },
     "/api/1/receipts": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "receipts"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -18636,12 +18297,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "receipts"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -18781,12 +18436,6 @@
     },
     "/api/1/reports/trial_bs": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_bs"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -19149,12 +18798,6 @@
     },
     "/api/1/reports/trial_bs_three_years": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_bs_three_years"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -19505,12 +19148,6 @@
     },
     "/api/1/reports/trial_bs_two_years": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_bs_two_years"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -19849,12 +19486,6 @@
     },
     "/api/1/reports/trial_pl": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_pl"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -20293,12 +19924,6 @@
     },
     "/api/1/reports/trial_pl_sections": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_pl_sections"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -20673,12 +20298,6 @@
     },
     "/api/1/reports/trial_pl_three_years": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_pl_three_years"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -21101,12 +20720,6 @@
     },
     "/api/1/reports/trial_pl_two_years": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "reports",
-          "trial_pl_two_years"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -21513,11 +21126,6 @@
     },
     "/api/1/sections/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "sections"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -21598,11 +21206,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "sections"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -21714,11 +21317,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "sections"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -21742,11 +21340,6 @@
     },
     "/api/1/sections": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "sections"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -21822,12 +21415,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "sections"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -21931,11 +21518,6 @@
     },
     "/api/1/segments/{segment_id}/tags/{id}": {
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "segments"
-        ],
         "parameters": [
           {
             "name": "segment_id",
@@ -22049,11 +21631,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "segments"
-        ],
         "parameters": [
           {
             "name": "segment_id",
@@ -22085,11 +21662,6 @@
     },
     "/api/1/segments/{segment_id}/tags": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "segments"
-        ],
         "parameters": [
           {
             "name": "segment_id",
@@ -22189,11 +21761,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "segments"
-        ],
         "parameters": [
           {
             "name": "segment_id",
@@ -22301,11 +21868,6 @@
     },
     "/api/1/tags/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "tags"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -22382,11 +21944,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "tags"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -22486,11 +22043,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "tags"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -22514,11 +22066,6 @@
     },
     "/api/1/tags": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "tags"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -22590,12 +22137,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "tags"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -22687,12 +22228,6 @@
     },
     "/api/1/taxes/codes/{code}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "taxes",
-          "codes"
-        ],
         "parameters": [
           {
             "name": "code",
@@ -22745,13 +22280,6 @@
     },
     "/api/1/taxes/codes": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "taxes",
-          "codes"
-        ],
-        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -22797,12 +22325,6 @@
     },
     "/api/1/taxes/companies/{company_id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "taxes",
-          "companies"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -22881,11 +22403,6 @@
     },
     "/api/1/transfers/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "transfers"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -22999,11 +22516,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "transfers"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -23171,11 +22683,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "transfers"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -23199,11 +22706,6 @@
     },
     "/api/1/transfers": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "transfers"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -23348,12 +22850,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "transfers"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -23513,12 +23009,6 @@
     },
     "/api/1/users/capabilities": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "users",
-          "capabilities"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -24869,11 +24359,6 @@
     },
     "/api/1/users": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "users"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -24969,12 +24454,6 @@
     },
     "/api/1/users/me": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "users",
-          "me"
-        ],
         "parameters": [
           {
             "name": "companies",
@@ -25093,13 +24572,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "users",
-          "me"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -25201,11 +24673,6 @@
     },
     "/api/1/wallet_txns/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "wallet_txns"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -25314,11 +24781,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "wallet_txns"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -25342,11 +24804,6 @@
     },
     "/api/1/wallet_txns": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "wallet_txns"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -25522,12 +24979,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "wallet_txns"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -25680,11 +25131,6 @@
     },
     "/api/1/walletables/{type}/{id}": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "walletables"
-        ],
         "parameters": [
           {
             "name": "type",
@@ -25782,11 +25228,6 @@
         }
       },
       "put": {
-        "tags": [
-          "api",
-          "1",
-          "walletables"
-        ],
         "parameters": [
           {
             "name": "type",
@@ -25908,11 +25349,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "api",
-          "1",
-          "walletables"
-        ],
         "parameters": [
           {
             "name": "type",
@@ -25944,11 +25380,6 @@
     },
     "/api/1/walletables": {
       "get": {
-        "tags": [
-          "api",
-          "1",
-          "walletables"
-        ],
         "parameters": [
           {
             "name": "company_id",
@@ -26065,12 +25496,6 @@
         }
       },
       "post": {
-        "tags": [
-          "api",
-          "1",
-          "walletables"
-        ],
-        "parameters": [],
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
