@@ -1,6 +1,6 @@
 import fs, { copyFileSync } from 'fs';
 import { afterAll, beforeAll, describe, expect, test } from 'vitest';
-import build from '../src';
+import { generate } from '../src/generate';
 import type { ConfigFile } from '../src/getConfig';
 
 describe('cli test', () => {
@@ -18,7 +18,7 @@ describe('cli test', () => {
       copyFileSync(`${config.input}.json`, outputFile);
     }
 
-    build({ ...config, openapi: { outputFile } });
+    generate({ ...config, openapi: { outputFile } });
 
     expect(fs.readFileSync(outputFile, 'utf8')).toBe(
       fs.readFileSync(originalFile, 'utf8').replace(/\r/g, ''),

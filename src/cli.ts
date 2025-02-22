@@ -1,7 +1,7 @@
 import { getConfigs } from 'aspida/dist/cjs/getConfigs';
 import watchInputDir from 'aspida/dist/cjs/watchInputDir';
 import minimist from 'minimist';
-import build from '.';
+import { generate } from './generate';
 import type { ConfigFile, PartialConfig } from './getConfig';
 
 export const run = (args: string[]) => {
@@ -13,10 +13,10 @@ export const run = (args: string[]) => {
   const configs: ConfigFile[] = getConfigs(argv.config);
 
   if (configs.length > 1) {
-    build(configs);
+    generate(configs);
 
     if (argv.watch !== undefined) {
-      configs.forEach((config) => watchInputDir(config.input, () => build(config)));
+      configs.forEach((config) => watchInputDir(config.input, () => generate(config)));
     }
 
     return;
@@ -31,7 +31,7 @@ export const run = (args: string[]) => {
     },
   };
 
-  build(option);
+  generate(option);
 
-  if (argv.watch !== undefined) watchInputDir(config.input, () => build(option));
+  if (argv.watch !== undefined) watchInputDir(config.input, () => generate(option));
 };

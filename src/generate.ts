@@ -8,10 +8,28 @@ import * as TJS from 'typescript-json-schema';
 import type { PartialConfig } from './getConfig';
 import { getConfig } from './getConfig';
 
-export const toOpenAPI = (params: {
-  input: string;
-  template?: OpenAPIV3_1.Document | string;
-}): string => {
+export const generate = (configs?: PartialConfig) =>
+  getConfig(configs).forEach((config) => {
+    const existingDoc: OpenAPIV3_1.Document | undefined = existsSync(config.output)
+      ? JSON.parse(readFileSync(config.output, 'utf8'))
+      : undefined;
+    const template: OpenAPIV3_1.Document = {
+      openapi: '3.1.0',
+      info: {
+        title: `${config.output.split('/').at(-1)?.replace('.json', '')} api`,
+        version: 'v0.0',
+      },
+      servers: config.baseURL ? [{ url: config.baseURL }] : undefined,
+      ...existingDoc,
+      paths: {},
+      components: {},
+    };
+
+    writeFileSync(config.output, toOpenAPI({ input: config.input, template }), 'utf8');
+    console.log(`${config.output} was built successfully.`);
+  });
+
+const toOpenAPI = (params: { input: string; template?: OpenAPIV3_1.Document | string }): string => {
   const tree = getDirentTree(params.input);
 
   const createFilePaths = (tree: DirentTree): string[] => {
@@ -133,24 +151,3 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
 
   return JSON.stringify(doc, null, 2).replaceAll('#/definitions', '#/components/schemas');
 };
-
-export default (configs?: PartialConfig) =>
-  getConfig(configs).forEach((config) => {
-    const existingDoc: OpenAPIV3_1.Document | undefined = existsSync(config.output)
-      ? JSON.parse(readFileSync(config.output, 'utf8'))
-      : undefined;
-    const template: OpenAPIV3_1.Document = {
-      openapi: '3.1.0',
-      info: {
-        title: `${config.output.split('/').at(-1)?.replace('.json', '')} api`,
-        version: 'v0.0',
-      },
-      servers: config.baseURL ? [{ url: config.baseURL }] : undefined,
-      ...existingDoc,
-      paths: {},
-      components: {},
-    };
-
-    writeFileSync(config.output, toOpenAPI({ input: config.input, template }), 'utf8');
-    console.log(`${config.output} was built successfully.`);
-  });
