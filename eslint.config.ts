@@ -6,8 +6,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   { files: ['**/*.ts'] },
-  gitignore(),
-  { ignores: ['samples'] },
+  gitignore({ files: ['./.gitignore', './.prettierignore'] }),
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
