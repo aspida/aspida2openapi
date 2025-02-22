@@ -876,7 +876,6 @@
         "type": "object",
         "properties": {
           "size": {
-            "description": "The total number of parameter entries.",
             "type": "number"
           }
         },
