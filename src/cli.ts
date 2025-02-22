@@ -6,14 +6,9 @@ import type { ConfigFile, PartialConfig } from './getConfig';
 
 export const run = (args: string[]) => {
   const argv: Record<string, string | undefined> = minimist(args, {
-    string: ['version', 'config', 'output', 'watch'],
-    alias: { v: 'version', c: 'config', o: 'output', w: 'watch' },
+    string: ['config', 'output', 'watch'],
+    alias: { c: 'config', o: 'output', w: 'watch' },
   });
-
-  if (argv.version !== undefined) {
-    console.log(`v${require('../package.json').version}`);
-    return;
-  }
 
   const configs: ConfigFile[] = getConfigs(argv.config);
 

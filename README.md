@@ -43,10 +43,6 @@ path to an aspida config file
 
 enable watch mode
 
-### `--version`
-
-display version
-
 ## License
 
 aspida2openapi is licensed under a [MIT License](https://github.com/aspida/aspida2openapi/blob/main/LICENSE).
