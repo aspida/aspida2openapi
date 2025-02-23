@@ -315,21 +315,23 @@
   "components": {
     "schemas": {
       "File": {
+        "description": "`File` class is a global reference for `import { File } from 'node:buffer'`\nhttps://nodejs.org/api/buffer.html#class-file",
         "type": "object",
         "properties": {
+          "name": {
+            "description": "The name of the `File`.",
+            "type": "string"
+          },
           "lastModified": {
+            "description": "The last modified date of the `File`.",
             "type": "number"
           },
-          "name": {
-            "type": "string"
-          },
-          "webkitRelativePath": {
-            "type": "string"
-          },
           "size": {
+            "description": "The total size of the `Blob` in bytes.",
             "type": "number"
           },
           "type": {
+            "description": "The content-type of the `Blob`.",
             "type": "string"
           }
         },
@@ -337,8 +339,7 @@
           "lastModified",
           "name",
           "size",
-          "type",
-          "webkitRelativePath"
+          "type"
         ]
       }
     }

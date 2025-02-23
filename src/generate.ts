@@ -4,6 +4,7 @@ import { getDirentTree } from 'aspida/dist/cjs/getDirentTree';
 import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import type { OpenAPIV3_1 } from 'openapi-types';
 import { join } from 'path';
+import ts from 'typescript';
 import * as TJS from 'typescript-json-schema';
 import type { PartialConfig } from './getConfig';
 import { getConfig } from './getConfig';
@@ -29,7 +30,7 @@ export const generate = (configs?: PartialConfig) =>
     console.log(`${config.output} was built successfully.`);
   });
 
-const toOpenAPI = (params: { input: string; template?: OpenAPIV3_1.Document | string }): string => {
+const toOpenAPI = (params: { input: string; template: OpenAPIV3_1.Document | string }): string => {
   const tree = getDirentTree(params.input);
 
   const createFilePaths = (tree: DirentTree): string[] => {
@@ -50,15 +51,16 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
 
   writeFileSync(typeFilePath, typeFile, 'utf8');
 
-  const compilerOptions: TJS.CompilerOptions = {
-    strictNullChecks: true,
-    rootDir: process.cwd(),
-    baseUrl: process.cwd(),
-    // @ts-expect-error dont match ScriptTarget
-    target: 'ES2022',
-  };
+  const configFileName = ts.findConfigFile(params.input, ts.sys.fileExists);
+  const compilerOptions = configFileName
+    ? ts.parseJsonConfigFileContent(
+        ts.readConfigFile(configFileName, ts.sys.readFile).config,
+        ts.sys,
+        params.input,
+      )
+    : undefined;
 
-  const program = TJS.getProgramFromFiles([typeFilePath], compilerOptions);
+  const program = TJS.getProgramFromFiles([typeFilePath], compilerOptions?.options);
   const schema = TJS.generateSchema(program, 'AllMethods', { required: true });
   const doc: OpenAPIV3_1.Document = {
     ...(typeof params.template === 'string'

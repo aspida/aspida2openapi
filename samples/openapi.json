@@ -5548,24 +5548,59 @@
         ]
       },
       "FormData": {
-        "type": "object"
-      },
-      "File": {
         "type": "object",
         "properties": {
+          "forEach": {
+            "description": "Executes given callback function for each field of the FormData instance",
+            "type": "object"
+          },
+          "keys": {
+            "description": "Returns an [`iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) allowing to go through all keys contained in this `FormData` object.\nEach key is a `string`.",
+            "type": "object"
+          },
+          "values": {
+            "description": "Returns an [`iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) allowing to go through all values contained in this object `FormData` object.\nEach value is a [`FormDataValue`](https://developer.mozilla.org/en-US/docs/Web/API/FormDataEntryValue).",
+            "type": "object"
+          },
+          "entries": {
+            "description": "Returns an [`iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) allowing to go through the `FormData` key/value pairs.\nThe key of each pair is a string; the value is a [`FormDataValue`](https://developer.mozilla.org/en-US/docs/Web/API/FormDataEntryValue).",
+            "type": "object"
+          },
+          "__@iterator@15354": {
+            "description": "An alias for FormData#entries()",
+            "type": "object"
+          },
+          "__@toStringTag@15391": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "__@iterator@15354",
+          "__@toStringTag@15391",
+          "entries",
+          "forEach",
+          "keys",
+          "values"
+        ]
+      },
+      "File": {
+        "description": "`File` class is a global reference for `import { File } from 'node:buffer'`\nhttps://nodejs.org/api/buffer.html#class-file",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the `File`.",
+            "type": "string"
+          },
           "lastModified": {
+            "description": "The last modified date of the `File`.",
             "type": "number"
           },
-          "name": {
-            "type": "string"
-          },
-          "webkitRelativePath": {
-            "type": "string"
-          },
           "size": {
+            "description": "The total size of the `Blob` in bytes.",
             "type": "number"
           },
           "type": {
+            "description": "The content-type of the `Blob`.",
             "type": "string"
           }
         },
@@ -5573,8 +5608,7 @@
           "lastModified",
           "name",
           "size",
-          "type",
-          "webkitRelativePath"
+          "type"
         ]
       }
     }
