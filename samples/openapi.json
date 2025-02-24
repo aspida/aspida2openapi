@@ -755,6 +755,65 @@
     },
     "/api/v3/2fa": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-organisation-token"
+                ]
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -823,6 +882,52 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -904,6 +1009,69 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -1211,6 +1379,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -1347,6 +1569,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -1405,6 +1681,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ]
       }
@@ -1427,6 +1757,72 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-token": {
+                    "description": "User token",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-token"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -1503,6 +1899,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -1584,6 +2034,69 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -1628,6 +2141,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -1743,6 +2310,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -1825,6 +2446,60 @@
               "description": "coma separated ids of requested cards",
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -2064,6 +2739,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -2128,6 +2857,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -2177,6 +2960,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -2243,6 +3080,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -2279,6 +3170,76 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-user-public-key": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-user-signed-challenge": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -2442,6 +3403,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -2644,6 +3659,69 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ]
       }
@@ -2674,6 +3752,60 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -2770,6 +3902,60 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -2888,6 +4074,52 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -2942,6 +4174,69 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -3170,6 +4465,72 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-token": {
+                    "description": "User token",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-token"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3238,6 +4599,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3320,6 +4735,69 @@
               "description": "coma separated ids of requested cards",
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -3356,6 +4834,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3463,6 +4995,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3520,6 +5106,78 @@
     },
     "/api/v3/chats/keys": {
       "get": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-user-public-key": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-user-signed-challenge": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "content": {
@@ -3569,6 +5227,62 @@
     },
     "/api/v3/extension/audio": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3611,6 +5325,62 @@
     },
     "/api/v3/extension/image": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3659,6 +5429,54 @@
     },
     "/api/v3/extension/parse": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3733,6 +5551,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3800,6 +5672,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3864,6 +5790,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -3978,6 +5958,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -4034,6 +6068,62 @@
     },
     "/api/v3/extension/video": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -4082,6 +6172,62 @@
     },
     "/api/v3/fcm_token": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4106,6 +6252,54 @@
     },
     "/api/v3/info": {
       "get": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              }
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "content": {
@@ -4134,6 +6328,62 @@
     },
     "/api/v3/login": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4229,6 +6479,62 @@
     },
     "/api/v3/logout": {
       "post": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4250,6 +6556,62 @@
     },
     "/api/v3/me": {
       "get": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "content": {
@@ -4309,6 +6671,65 @@
     },
     "/api/v3/organisation": {
       "get": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-organisation-token"
+                ]
+              }
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "content": {
@@ -4424,6 +6845,63 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-organisation-token"
+                ]
+              }
+            ]
           }
         ],
         "responses": {
@@ -4504,6 +6982,69 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -4740,6 +7281,69 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "requestBody": {
@@ -4868,6 +7472,69 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-firebase-instance-id": {
+                    "description": "Firebase Instance ID provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (example: sending FCM messages)",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -5115,6 +7782,60 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         ],
         "responses": {
@@ -5156,6 +7877,62 @@
     },
     "/api/v3/user": {
       "get": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-organisation-token": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "content": {
@@ -5198,6 +7975,54 @@
     },
     "/api/v3/user/profile": {
       "put": {
+        "parameters": [
+          {
+            "name": "allOf",
+            "in": "header",
+            "required": false,
+            "schema": [
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-id"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-platform": {
+                    "enum": [
+                      "android",
+                      "android-hockey",
+                      "ios",
+                      "ios-hockey"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-platform"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x-tchop-app-version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x-tchop-app-version"
+                ]
+              }
+            ]
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {

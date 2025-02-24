@@ -73,7 +73,12 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
   unlinkSync(typeFilePath);
 
   (schema?.items as TJS.Definition[])?.forEach((def, i) => {
-    const parameters: { name: string; in: 'path' | 'query'; required: boolean; schema: any }[] = [];
+    const parameters: {
+      name: string;
+      in: 'path' | 'query' | 'header';
+      required: boolean;
+      schema: any;
+    }[] = [];
 
     let path = paths[i];
 
@@ -118,16 +123,31 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
         );
       }
 
-      const reqFormat = props.reqFormat?.$ref;
+      const reqFormat = props.reqFormat?.$ref as string;
+      const headersDef = props.reqHeaders?.$ref
+        ? (schema?.definitions?.[props.reqHeaders.$ref!.split('/').at(-1)!] as TJS.Definition)
+        : props.reqHeaders;
+
+      if (headersDef) {
+        params.push(
+          ...Object.entries(headersDef).map(([name, value]) => ({
+            name,
+            in: 'header' as const,
+            required: props.reqHeaders?.required?.includes(name) ?? false,
+            schema: value,
+          })),
+        );
+      }
+
       const reqContentType =
-        ((props.reqHeaders?.properties?.['content-type'] as TJS.Definition)?.const ??
-        reqFormat?.includes('FormData'))
+        ((headersDef?.properties?.['content-type'] as TJS.Definition)?.const as string) ??
+        (reqFormat?.includes('FormData')
           ? 'multipart/form-data'
           : reqFormat?.includes('URLSearchParams')
             ? 'application/x-www-form-urlencoded'
-            : 'application/json';
+            : 'application/json');
       const resContentType =
-        ((props.resHeaders?.properties?.['content-type'] as TJS.Definition)?.const as string) ??
+        ((headersDef?.properties?.['content-type'] as TJS.Definition)?.const as string) ??
         'application/json';
 
       return {
@@ -144,6 +164,7 @@ type AllMethods = [${paths.map((_, i) => `Methods${i}`).join(', ')}]`;
               : {
                   [(props.status?.const as string) ?? '2XX']: {
                     content: { [resContentType]: { schema: props.resBody } },
+                    headers: props.resHeaders,
                   },
                 },
         },

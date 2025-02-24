@@ -149,6 +149,22 @@
             "schema": {
               "type": "number"
             }
+          },
+          {
+            "name": "type",
+            "in": "header",
+            "required": false,
+            "schema": "object"
+          },
+          {
+            "name": "properties",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "api_key": {
+                "type": "string"
+              }
+            }
           }
         ]
       }
@@ -864,6 +880,18 @@
                   "type": "string"
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "X-Expires-After": {
+                  "description": "date in UTC when token expires",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "X-Expires-After"
+              ]
             }
           }
         }

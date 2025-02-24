@@ -92,6 +92,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -189,6 +201,18 @@
                   }
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -296,6 +320,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -407,6 +443,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -510,6 +558,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -618,6 +678,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -714,6 +786,18 @@
                   }
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -825,6 +909,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }
@@ -940,6 +1036,18 @@
                   ]
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "x-correlator": {
+                  "description": "Correlation id for the different services",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x-correlator"
+              ]
             }
           }
         }

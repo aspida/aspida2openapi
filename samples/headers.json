@@ -16,6 +16,21 @@
                   "type": "string"
                 }
               }
+            },
+            "headers": {
+              "type": "object",
+              "properties": {
+                "X-Simple": {
+                  "type": "string"
+                },
+                "X-Ref": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "X-Ref",
+                "X-Simple"
+              ]
             }
           }
         }
